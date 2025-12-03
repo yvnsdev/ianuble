@@ -51,12 +51,24 @@ function initNavigation() {
         });
     });
 
-    // Header scroll effect
+    // Header scroll effect & logo swap
+    const navLogo = document.getElementById('nav-logo');
+    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             header.classList.add('scrolled');
+            // Cambiar a banner.png cuando hay scroll
+            if (navLogo) {
+                navLogo.src = 'banner.png';
+                navLogo.classList.add('logo-banner');
+            }
         } else {
             header.classList.remove('scrolled');
+            // Volver a logo.png cuando está en el inicio
+            if (navLogo) {
+                navLogo.src = 'logo.png';
+                navLogo.classList.remove('logo-banner');
+            }
         }
     });
 
