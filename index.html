@@ -1,678 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Ñuble - IA para todos y todas</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IA Ñuble - Plataforma Educativa en Inteligencia Artificial</title>
+  <meta name="description" content="IA Ñuble - EBCT dedicada a proyectos de inteligencia artificial para salud, educación y territorio.">
+  <!-- Fuentes sugeridas: Open Sans para textos y Montserrat para títulos -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación principal -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#inicio" class="logo">
-                <img src="banner.png" alt="Logo IA Ñuble" class="logo-img">
-            </a>
-            
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#ebct" class="nav-link">Nuestra EBCT</a></li>
-                <li><a href="#equipo" class="nav-link">Equipo</a></li>
-                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-                <li><a href="#alianzas" class="nav-link">Alianzas</a></li>
-                <li><a href="#galeria" class="nav-link">Galería</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
-            </ul>
-        </div>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="#inicio" class="brand">
+        <img src="banner.png" alt="Logo IA Ñuble" class="logo">
+      </a>
+
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nuestra-ebct">Nuestra EBCT</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#alianzas">Alianzas</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Sección Hero / Portada -->
+  <main>
+    <!-- HERO / PORTADA -->
     <section id="inicio" class="hero">
-        <canvas id="netCanvas" class="hero-canvas" aria-hidden="true"></canvas>
-        
-        <!-- Formas decorativas -->
-        <div class="hero-shapes">
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
-            <div class="hero-shape"></div>
+      <canvas id="neural-network" class="neural-canvas"></canvas>
+      <div class="hero-inner container">
+        <div class="hero-text">
+          <h1 class="hero-title">IA Ñuble – Inteligencia Artificial para el territorio</h1>
+          <p class="hero-sub">EBCT enfocada en proyectos de IA aplicada a salud, educación y desarrollo territorial. Creamos soluciones responsables y cercanas al territorio.</p>
+          <div class="hero-actions">
+            <a href="#proyectos" class="btn primary">Ver proyectos</a>
+            <a href="#equipo" class="btn outline">Conocer a nuestro equipo</a>
+          </div>
         </div>
-        
-        <div class="container hero-content">
-            <div class="hero-badge animate-fade-in">
-                <i class="fas fa-microchip"></i>
-                <span>Empresa de Base Científico-Tecnológica</span>
-            </div>
-            
-            <h1 class="hero-title animate-fade-in">
-                Transformamos el <span class="highlight">territorio</span> con Inteligencia Artificial
-            </h1>
-            
-            <p class="hero-subtitle animate-fade-in-delay">
-                Desarrollamos soluciones de IA aplicada a salud, educación, agricultura y desarrollo sostenible para la región de Ñuble y Chile.
-            </p>
-            
-            <div class="hero-buttons animate-slide-up">
-                <a href="#proyectos" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> Ver proyectos
-                </a>
-                <a href="#contacto" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Contáctanos
-                </a>
-            </div>
-            
-            <div class="hero-stats animate-slide-up">
-                <div class="hero-stat">
-                    <div class="hero-stat-number">2+</div>
-                    <div class="hero-stat-label">Años de experiencia</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">6+</div>
-                    <div class="hero-stat-label">Proyectos activos</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">3+</div>
-                    <div class="hero-stat-label">Alianzas estratégicas</div>
-                </div>
-            </div>
+        <div class="hero-art">
+          <img src="favicon.png" alt="Ilustración IA Ñuble" class="hero-img">
         </div>
-        
-        <div class="hero-overlay"></div>
+      </div>
     </section>
 
-    <!-- Sección Nuestra EBCT -->
-    <section id="ebct" class="section ebct-section">
-        <div class="container">
-            <h2 class="section-title">Nuestra EBCT</h2>
-            <p class="section-subtitle">Somos una Empresa de Base Científico-Tecnológica (EBCT) que desarrolla soluciones de inteligencia artificial para transformar positivamente la región de Ñuble y Chile.</p>
-            
-            <div class="ebct-cards">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="card-title">Misión</h3>
-                    <p class="card-text">Desarrollar soluciones de IA accesibles y éticas que resuelvan problemas reales del territorio, impulsando la innovación y el desarrollo sostenible en la región de Ñuble.</p>
-                </div>
-                
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3 class="card-title">Visión</h3>
-                    <p class="card-text">Ser referente nacional en la aplicación de inteligencia artificial para el desarrollo territorial, creando ecosistemas de innovación que conecten la academia, el sector público y la industria.</p>
-                </div>
-                
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="card-title">Áreas de Impacto</h3>
-                    <p class="card-text">Salud, educación, agricultura, gestión territorial, ruralidad, gestión de recursos hídricos, energías renovables y desarrollo económico local.</p>
-                </div>
-            </div>
-            
-            <!-- Timeline Horizontal Profesional -->
-            <div class="timeline-container-horizontal">
-                <h3 class="timeline-title">Nuestra Trayectoria</h3>
-                <p class="timeline-subtitle">De la idea al impacto: construyendo el futuro de la región Ñuble</p>
-                
-                <div class="timeline-horizontal">
-                    <div class="timeline-track"></div>
-                    
-                    <div class="timeline-item-h" data-aos="fade-up">
-                        <div class="timeline-marker">
-                            <div class="marker-dot"></div>
-                            <div class="marker-pulse"></div>
-                        </div>
-                        <div class="timeline-year">Q1 2024</div>
-                        <div class="timeline-card">
-                            <div class="timeline-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h4>Génesis del Proyecto</h4>
-                            <p>Nacimiento de la visión: conformación del equipo fundador y definición de la misión de llevar IA al territorio de Ñuble.</p>
-                            <span class="timeline-tag">Ideación</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item-h" data-aos="fade-up" data-aos-delay="100">
-                        <div class="timeline-marker">
-                            <div class="marker-dot"></div>
-                            <div class="marker-pulse"></div>
-                        </div>
-                        <div class="timeline-year">Q2 2024</div>
-                        <div class="timeline-card">
-                            <div class="timeline-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <h4>Fundación EBCT</h4>
-                            <p>Constitución oficial de IA Ñuble como Empresa de Base Científico-Tecnológica. Inicio de operaciones y primeros prototipos.</p>
-                            <span class="timeline-tag">Lanzamiento</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item-h" data-aos="fade-up" data-aos-delay="200">
-                        <div class="timeline-marker">
-                            <div class="marker-dot"></div>
-                            <div class="marker-pulse"></div>
-                        </div>
-                        <div class="timeline-year">Q3 2024</div>
-                        <div class="timeline-card">
-                            <div class="timeline-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h4>Primeras Alianzas</h4>
-                            <p>Firma de convenios con el Gobierno Regional y universidades locales. Lanzamiento del proyecto piloto en salud predictiva.</p>
-                            <span class="timeline-tag">Colaboración</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item-h" data-aos="fade-up" data-aos-delay="300">
-                        <div class="timeline-marker">
-                            <div class="marker-dot"></div>
-                            <div class="marker-pulse"></div>
-                        </div>
-                        <div class="timeline-year">Q4 2024</div>
-                        <div class="timeline-card">
-                            <div class="timeline-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <h4>Validación y Crecimiento</h4>
-                            <p>Resultados positivos en pilotos. Ampliación del equipo técnico y obtención de financiamiento para nuevos proyectos.</p>
-                            <span class="timeline-tag">Milestone</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item-h" data-aos="fade-up" data-aos-delay="400">
-                        <div class="timeline-marker">
-                            <div class="marker-dot"></div>
-                            <div class="marker-pulse"></div>
-                        </div>
-                        <div class="timeline-year">Q1 2025</div>
-                        <div class="timeline-card">
-                            <div class="timeline-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <h4>Impacto Educativo</h4>
-                            <p>Lanzamiento de programas de capacitación en IA para escuelas y liceos técnicos de la región Ñuble.</p>
-                            <span class="timeline-tag">Educación</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item-h timeline-current" data-aos="fade-up" data-aos-delay="500">
-                        <div class="timeline-marker">
-                            <div class="marker-dot active"></div>
-                            <div class="marker-pulse active"></div>
-                        </div>
-                        <div class="timeline-year">Ahora</div>
-                        <div class="timeline-card highlight">
-                            <div class="timeline-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <h4>Consolidación</h4>
-                            <p>Proyectos en producción, nuevas líneas de desarrollo en smart cities y agricultura inteligente. ¡El futuro es hoy!</p>
-                            <span class="timeline-tag current">En curso</span>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item-h timeline-future" data-aos="fade-up" data-aos-delay="600">
-                        <div class="timeline-marker">
-                            <div class="marker-dot"></div>
-                            <div class="marker-pulse"></div>
-                        </div>
-                        <div class="timeline-year">2025+</div>
-                        <div class="timeline-card">
-                            <div class="timeline-icon">
-                                <i class="fas fa-globe-americas"></i>
-                            </div>
-                            <h4>Nuevos Horizontes</h4>
-                            <p>Expansión regional, colaboraciones internacionales y desarrollo de soluciones de IA de próxima generación.</p>
-                            <span class="timeline-tag">Visión</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-nav">
-                    <button class="timeline-nav-btn" id="timelinePrev" aria-label="Anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="timeline-nav-btn" id="timelineNext" aria-label="Siguiente">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+    <!-- NUESTRA EBCT -->
+    <section id="nuestra-ebct" class="section container">
+      <h2 class="section-title">Nuestra EBCT</h2>
+      <p class="lead">Una Empresa de Base Científico-Tecnológica (EBCT) que aplica investigación y tecnología para resolver desafíos locales.</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16l4-4-4-4M8 12h8"/></svg>
+          </div>
+          <h3>Misión</h3>
+          <p>Generar soluciones de IA que mejoren la calidad de vida y la toma de decisiones en Ñuble y el sur de Chile.</p>
+        </article>
+        <article class="card">
+          <div class="icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <h3>Visión</h3>
+          <p>Ser referente en investigación aplicada y transferencia tecnológica para el desarrollo regional sostenible.</p>
+        </article>
+        <article class="card">
+          <div class="icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Áreas de Impacto</h3>
+          <p>Salud, Educación, Territorio, Ruralidad y Agricultura de Precisión.</p>
+        </article>
+      </div>
+
+      <!-- Timeline simple -->
+      <div class="timeline">
+        <div class="timeline-item">2021 — Fundación</div>
+        <div class="timeline-item">2022 — Primer piloto en salud</div>
+        <div class="timeline-item">2023 — Alianzas con Universidad</div>
+        <div class="timeline-item">2024 — Proyecto en producción</div>
+      </div>
     </section>
 
-    <!-- Sección Liderazgo -->
-    <section class="section lider-section">
-        <div class="container">
-            <h2 class="section-title">Nuestra Líder</h2>
-            <div class="lider-card">
-                <div class="lider-img">
-                    <img src="leader2.jpg" alt="PhD Carola Figueroa Flores - Líder IA Ñuble">
-                </div>
-                <div class="lider-info">
-                    <h3 class="lider-name">PhD Carola Figueroa Flores</h3>
-                    <p class="lider-rol">Directora Ejecutiva / Líder EBCT</p>
-                    <p class="lider-desc">Doctora en Ciencias de la Computación con especialización en Computer Vision y Deep Learning. Investigadora de la Universidad del Bío-Bío con más de 12 publicaciones científicas y 112+ citaciones. Experta en reconocimiento de patrones, redes neuronales y procesamiento de imágenes aplicados a problemáticas territoriales.</p>
-                    <button class="btn btn-primary" id="openLiderModal">Ver perfil completo</button>
-                </div>
-            </div>
+    <!-- LIDERAZGO -->
+    <section id="liderazgo" class="section alt container">
+      <h2 class="section-title">Liderazgo</h2>
+      <div class="leader-card">
+        <img src="assets/team/leader.jpg" alt="Foto de la líder" class="leader-photo">
+        <div class="leader-info">
+          <h3>María Pérez</h3>
+          <p class="role">Directora / Líder EBCT</p>
+          <p class="bio">Investigadora en IA aplicada con experiencia en salud digital, análisis de datos y transferencia tecnológica.</p>
+          <button class="btn primary" id="open-leader-modal">Ver perfil completo</button>
         </div>
+      </div>
     </section>
 
-    <!-- Modal para la líder -->
-    <div class="modal" id="liderModal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <div class="modal-header">
-                <h2>PhD Carola Figueroa Flores</h2>
-                <p>Directora Ejecutiva / Líder EBCT</p>
-            </div>
-            <div class="modal-body">
-                <div class="modal-img">
-                    <img src="leader.jpeg" alt="PhD Carola Figueroa Flores">
-                </div>
-                <div class="modal-info">
-                    <h3>Formación Académica</h3>
-                    <ul>
-                        <li>PhD en Ciencias de la Computación - Computer Vision & Deep Learning</li>
-                        <li>Investigadora, Departamento de Ciencias de la Computación e Informática</li>
-                        <li>Universidad del Bío-Bío, Concepción, Chile</li>
-                    </ul>
-                    
-                    <h3>Áreas de Especialización</h3>
-                    <ul>
-                        <li>Computer Vision y Procesamiento de Imágenes</li>
-                        <li>Pattern Recognition y Object Recognition</li>
-                        <li>Redes Neuronales y Deep Learning</li>
-                        <li>Saliency Detection y Visual Attention</li>
-                    </ul>
-                    
-                    <h3>Investigación y Publicaciones</h3>
-                    <ul>
-                        <li>12+ publicaciones científicas internacionales, 112+ citaciones</li>
-                        <li>"Saliency for Free: Saliency Prediction as a Side-Effect of Object Recognition" (2021)</li>
-                        <li>"Deep Learning for Chilean Native Flora Classification" (2023)</li>
-                        <li>"Comprehensive Analysis of Model Errors in Blueberry Detection" - IA aplicada a agricultura (2023)</li>
-                        <li>"Hallucinating Saliency Maps for Fine-grained Image Classification" (2020-2021)</li>
-                    </ul>
-                    
-                    <h3>Colaboraciones Internacionales</h3>
-                    <ul>
-                        <li>Autonomous University of Barcelona - Computer Vision Center</li>
-                        <li>Co-investigadora con Joost van de Weijer, Bogdan Raducanu, David Berga</li>
-                        <li>Red de colaboradores en Europa y Latinoamérica</li>
-                    </ul>
-                    
-                    <div class="modal-social">
-                        <a href="https://www.researchgate.net/profile/Carola-Figueroa-Flores-2" target="_blank" class="social-link"><i class="fab fa-researchgate"></i> ResearchGate</a>
-                        <a href="https://scholar.google.com/citations?user=carola+figueroa+flores" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                        <a href="mailto:contacto@ianuble.cl" class="social-link"><i class="fas fa-envelope"></i> Contacto</a>
-                    </div>
-                </div>
-            </div>
+    <!-- EQUIPO -->
+    <section id="equipo" class="section container">
+      <h2 class="section-title">Equipo</h2>
+      <p class="lead">Equipo interdisciplinario formado por investigadores/as, ingenieros/as y agentes territoriales.</p>
+
+      <div class="team-grid">
+        <!-- Tarjetas de ejemplo; en proyecto real llenar dinámicamente -->
+        <article class="team-card" data-name="Juan Rojas" data-role="ML Engineer" data-bio="Especialista en modelos predictivos y visión por computador." tabindex="0">
+          <img src="assets/team/member1.jpg" alt="Foto Juan Rojas" class="team-photo">
+          <div class="team-meta">
+            <h4>Juan Rojas</h4>
+            <small>ML Engineer</small>
+          </div>
+        </article>
+        <article class="team-card" data-name="Ana Gómez" data-role="Investigadora" data-bio="Foco en ética y evaluación de impacto social." tabindex="0">
+          <img src="assets/team/member2.jpg" alt="Foto Ana Gómez" class="team-photo">
+          <div class="team-meta">
+            <h4>Ana Gómez</h4>
+            <small>Investigadora</small>
+          </div>
+        </article>
+        <article class="team-card" data-name="Luis Torres" data-role="DevOps" data-bio="Infraestructura y despliegue en la nube." tabindex="0">
+          <img src="assets/team/member3.jpg" alt="Foto Luis Torres" class="team-photo">
+          <div class="team-meta">
+            <h4>Luis Torres</h4>
+            <small>DevOps</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS (carrusel) -->
+    <section id="proyectos" class="section container">
+      <h2 class="section-title">Proyectos destacados</h2>
+      <div class="carousel" aria-roledescription="carousel">
+        <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+        <div class="carousel-track">
+          <article class="slide" data-title="Salud Rural" data-tags="Salud" data-state="Piloto">
+            <span class="slide-badge">Piloto</span>
+            <h3>Salud Rural</h3>
+            <div class="tags"><span>Salud</span><span>Telemedicina</span></div>
+            <p class="excerpt">Sistema de triage asistido por IA para centros rurales, mejorando tiempos de atención.</p>
+            <button class="btn outline slide-more">Más detalles</button>
+          </article>
+          <article class="slide" data-title="Aula Inteligente" data-tags="Educación" data-state="Producción">
+            <span class="slide-badge production">Producción</span>
+            <h3>Aula Inteligente</h3>
+            <div class="tags"><span>Educación</span><span>Analítica</span></div>
+            <p class="excerpt">Plataforma para personalizar aprendizaje usando modelos adaptativos de IA.</p>
+            <button class="btn outline slide-more">Más detalles</button>
+          </article>
+          <article class="slide" data-title="Territorio+" data-tags="Territorio" data-state="Diseño">
+            <span class="slide-badge design">Diseño</span>
+            <h3>Territorio+</h3>
+            <div class="tags"><span>Territorio</span><span>SIG</span></div>
+            <p class="excerpt">Herramientas para análisis territorial y priorización de inversiones públicas.</p>
+            <button class="btn outline slide-more">Más detalles</button>
+          </article>
         </div>
+        <button class="carousel-btn next" aria-label="Siguiente">›</button>
+        <div class="carousel-dots" role="tablist"></div>
+      </div>
+    </section>
+
+    <!-- ALIANZAS -->
+    <section id="alianzas" class="section alt container">
+      <h2 class="section-title">Alianzas y colaboradores</h2>
+      <div class="partners">
+        <div class="partner" title="Universidad de Ñuble"><img src="assets/logos/partner1.png" alt="Universidad de Ñuble"></div>
+        <div class="partner" title="Hospital Regional"><img src="assets/logos/partner2.png" alt="Hospital Regional"></div>
+        <div class="partner" title="Municipalidad"><img src="assets/logos/partner3.png" alt="Municipalidad"></div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="section container">
+      <h2 class="section-title">Galería de proyectos</h2>
+      <div class="filters">
+        <button class="filter active" data-filter="all">Todos</button>
+        <button class="filter" data-filter="salud">Salud</button>
+        <button class="filter" data-filter="educacion">Educación</button>
+        <button class="filter" data-filter="territorio">Territorio</button>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item" data-category="salud">
+          <img src="assets/gallery/photo1.jpg" alt="Taller salud" loading="lazy">
+          <figcaption>Workshop Salud Digital</figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="educacion">
+          <img src="assets/gallery/photo2.jpg" alt="Clase" loading="lazy">
+          <figcaption>Aula abierta</figcaption>
+        </figure>
+        <figure class="gallery-item" data-category="territorio">
+          <img src="assets/gallery/photo3.jpg" alt="Mapa" loading="lazy">
+          <figcaption>Trabajo territorial</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section container">
+      <h2 class="section-title">Testimonios</h2>
+      <div class="testimonials">
+        <blockquote class="testimonial">“La colaboración con IA Ñuble mejoró nuestra capacidad de gestión.” <cite>— Dr. R. Valdés, Hospital</cite></blockquote>
+        <blockquote class="testimonial">“Proyectos con impacto real en la comunidad.” <cite>— Alcaldesa J. Fuentes</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section alt container">
+      <h2 class="section-title">Contacto</h2>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-grid">
+          <label>Nombre <input type="text" name="nombre" required></label>
+          <label>Correo <input type="email" name="email" required></label>
+          <label>Organización <input type="text" name="org"></label>
+          <label class="full">Mensaje <textarea name="mensaje" rows="5" required></textarea></label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Enviar mensaje</button>
+          <div id="form-feedback" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logos/logo-circle.png" alt="Logo IA Ñuble" class="logo-small">
+        <div>
+          <strong>IA Ñuble</strong>
+          <p class="muted">EBCT de innovación y ciencia aplicada. Trabajamos por un territorio más inteligente y conectado.</p>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <strong>Enlaces</strong>
+        <a href="#inicio">Inicio</a>
+        <a href="#nuestra-ebct">Nuestra EBCT</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <div class="footer-contact">
+        <strong>Contacto</strong>
+        <a href="mailto:contacto@ianuble.cl">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          contacto@ianuble.cl
+        </a>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub" title="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
+    <div class="container copyright">© 2024 IA Ñuble — EBCT de innovación y ciencia aplicada. Todos los derechos reservados.</div>
+  </footer>
 
-    <!-- Sección Equipo -->
-    <section id="equipo" class="section team-section">
-        <div class="container">
-            <h2 class="section-title">Nuestro Equipo</h2>
-            <p class="section-subtitle">Un equipo multidisciplinario de profesionales apasionados por la inteligencia artificial y su potencial para transformar la región.</p>
-            
-            <div class="team-grid" id="teamGrid">
-                <!-- Tarjetas de equipo se generarán dinámicamente con JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal para integrantes del equipo -->
-    <div class="modal" id="teamModal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <div class="modal-header">
-                <h2 id="teamModalName">Nombre del integrante</h2>
-                <p id="teamModalRole">Rol del integrante</p>
-            </div>
-            <div class="modal-body">
-                <div class="modal-img">
-                    <img id="teamModalImg" src="" alt="Foto del integrante">
-                </div>
-                <div class="modal-info">
-                    <h3>Especialidad</h3>
-                    <p id="teamModalSpecialty"></p>
-                    
-                    <h3>Formación</h3>
-                    <p id="teamModalEducation"></p>
-                    
-                    <h3>Proyectos Destacados</h3>
-                    <p id="teamModalProjects"></p>
-                    
-                    <h3>Contacto</h3>
-                    <p id="teamModalContact"></p>
-                </div>
-            </div>
-        </div>
+  <!-- MODALES -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <button class="modal-close" aria-label="Cerrar">×</button>
+      <div class="modal-content"></div>
     </div>
+  </div>
 
-    <!-- Sección Proyectos con Carrusel -->
-    <section id="proyectos" class="section projects-section">
-        <div class="container">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <p class="section-subtitle">Soluciones de IA desarrolladas para abordar desafíos específicos del territorio.</p>
-            
-            <div class="carousel-container">
-                <div class="carousel" id="projectsCarousel">
-                    <!-- Slides de proyectos se generarán dinámicamente con JavaScript -->
-                </div>
-                
-                <!-- Controles del carrusel -->
-                <button class="carousel-control prev" id="carouselPrev" aria-label="Proyecto anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-control next" id="carouselNext" aria-label="Proyecto siguiente">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                
-                <!-- Indicadores del carrusel -->
-                <div class="carousel-indicators" id="carouselIndicators">
-                    <!-- Indicadores se generarán dinámicamente con JavaScript -->
-                </div>
-                
-                <!-- Miniaturas del carrusel -->
-                <div class="carousel-thumbs" id="carouselThumbs">
-                    <!-- Thumbnails se generarán dinámicamente con JavaScript -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal para detalles de proyecto -->
-    <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <div class="modal-header">
-                <h2 id="projectModalName">Nombre del proyecto</h2>
-                <div class="tags-container" id="projectModalTags">
-                    <!-- Etiquetas se generarán dinámicamente -->
-                </div>
-            </div>
-            <div class="modal-body">
-                <h3>Descripción Extendida</h3>
-                <p id="projectModalDescription"></p>
-                
-                <h3>Tecnologías Utilizadas</h3>
-                <div class="tech-container" id="projectModalTech">
-                    <!-- Tecnologías se generarán dinámicamente -->
-                </div>
-                
-                <h3>Estado del Proyecto</h3>
-                <p id="projectModalStatus"></p>
-                
-                <h3>Impacto Esperado</h3>
-                <p id="projectModalImpact"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sección Alianzas -->
-    <section id="alianzas" class="section alliances-section">
-        <div class="container">
-            <h2 class="section-title">Alianzas y Colaboradores</h2>
-            <p class="section-subtitle">Trabajamos con instituciones líderes para potenciar el impacto de nuestros proyectos.</p>
-            
-            <div class="alliances-carousel">
-                <div class="alliances-track" id="alliancesTrack">
-                    <!-- Logos de alianzas se generarán dinámicamente con JavaScript -->
-                </div>
-            </div>
-            
-            <div class="alliances-controls">
-                <button class="alliance-prev" id="alliancePrev" aria-label="Aliado anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="alliance-next" id="allianceNext" aria-label="Aliado siguiente">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Galería -->
-    <section id="galeria" class="section gallery-section">
-        <div class="container">
-            <h2 class="section-title">Galería de Proyectos</h2>
-            <p class="section-subtitle">Imágenes de nuestros proyectos, prototipos, actividades y talleres.</p>
-            
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="salud">Salud</button>
-                <button class="filter-btn" data-filter="educacion">Educación</button>
-                <button class="filter-btn" data-filter="territorio">Territorio</button>
-                <button class="filter-btn" data-filter="eventos">Eventos</button>
-            </div>
-            
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Imágenes de galería se generarán dinámicamente con JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal para galería (lightbox) -->
-    <div class="modal lightbox" id="galleryModal">
-        <div class="lightbox-content">
-            <span class="modal-close">&times;</span>
-            <div class="lightbox-img-container">
-                <img id="lightboxImg" src="" alt="Imagen ampliada">
-            </div>
-            <div class="lightbox-info">
-                <h3 id="lightboxTitle">Título de la imagen</h3>
-                <p id="lightboxDesc">Descripción de la imagen</p>
-                <div class="lightbox-category">
-                    <span id="lightboxCategory">Categoría</span>
-                </div>
-            </div>
-            <div class="lightbox-controls">
-                <button class="lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="lightbox-next" id="lightboxNext" aria-label="Imagen siguiente">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sección Testimonios -->
-    <section class="section testimonials-section">
-        <div class="container">
-            <h2 class="section-title">Testimonios e Impacto</h2>
-            <p class="section-subtitle">Lo que dicen nuestros colaboradores y beneficiarios sobre nuestro trabajo.</p>
-            
-            <div class="testimonials-container">
-                <div class="testimonial active">
-                    <div class="testimonial-content">
-                        <p>"La plataforma de IA para diagnóstico temprano de enfermedades respiratorias ha sido revolucionaria en nuestro centro de salud rural. Ha mejorado significativamente nuestra capacidad de respuesta."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Dr. Alejandro Méndez</h4>
-                        <p>Director, Centro de Salud Rural Las Trancas</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"La colaboración con IA Ñuble nos ha permitido implementar soluciones tecnológicas avanzadas en nuestras escuelas, preparando a los estudiantes para los desafíos del futuro digital."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>María Inés González</h4>
-                        <p>Jefa Depto. Educación, Municipalidad de Chillán</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Como agricultor, el sistema de predicción de rendimiento de cultivos basado en IA ha transformado nuestra manera de planificar la temporada, reduciendo riesgos y optimizando recursos."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <h4>Juan Carlos Ramírez</h4>
-                        <p>Presidente, Cooperativa Agrícola Ñuble</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonials-controls">
-                <button class="testimonial-prev" id="testimonialPrev" aria-label="Testimonio anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="testimonial-indicators">
-                    <span class="indicator active" data-index="0"></span>
-                    <span class="indicator" data-index="1"></span>
-                    <span class="indicator" data-index="2"></span>
-                </div>
-                <button class="testimonial-next" id="testimonialNext" aria-label="Testimonio siguiente">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Contacto -->
-    <section id="contacto" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Contáctanos</h2>
-            <p class="section-subtitle">¿Tienes un proyecto en mente o quieres colaborar con nosotros? Escríbenos.</p>
-            
-            <div class="contact-container">
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nombre completo *</label>
-                        <input type="text" id="name" name="name" required>
-                        <div class="error-message" id="nameError"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Correo electrónico *</label>
-                        <input type="email" id="email" name="email" required>
-                        <div class="error-message" id="emailError"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="organization">Organización</label>
-                        <input type="text" id="organization" name="organization">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Mensaje *</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <div class="error-message" id="messageError"></div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-                </form>
-                
-                <div class="contact-info">
-                    <h3>Información de contacto</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Correo electrónico</h4>
-                            <p>contacto@ianuble.cl</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Ubicación</h4>
-                            <p>Chillán, Región de Ñuble, Chile</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Teléfono</h4>
-                            <p>+56 42 123 4567</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-social">
-                        <h4>Síguenos en redes sociales</h4>
-                        <div class="social-icons">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/logos/logo.png" alt="Logo IA Ñuble" class="footer-logo-img">
-                    <div class="footer-logo-text">
-                        <h3>IA ÑUBLE</h3>
-                        <p>EBCT de innovación y ciencia aplicada</p>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Enlaces rápidos</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#ebct">Nuestra EBCT</a></li>
-                        <li><a href="#proyectos">Proyectos</a></li>
-                        <li><a href="#equipo">Equipo</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Contacto</h4>
-                    <p><i class="fas fa-envelope"></i> contacto@ianuble.cl</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Chillán, Región de Ñuble, Chile</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> IA Ñuble – EBCT de innovación y ciencia aplicada</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Botón para volver arriba -->
-    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- Mensaje de éxito/error del formulario -->
-    <div class="message-toast" id="messageToast">
-        <span id="toastMessage"></span>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
