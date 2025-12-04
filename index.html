@@ -3,1310 +3,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IA Ñuble - Plataforma Educativa líder en Inteligencia Artificial en la Región de Ñuble, Chile. Más de 1.500 personas capacitadas, 20+ proyectos ejecutados. Democratizamos la IA para todos y todas.">
-    <meta name="keywords" content="Inteligencia Artificial, Educación, Ñuble, Chile, Tecnología, Innovación, Machine Learning, Capacitación IA, Transformación Digital">
-    <meta name="author" content="IA Ñuble">
-    <meta property="og:title" content="IA Ñuble - Plataforma Educativa en Inteligencia Artificial">
-    <meta property="og:description" content="Democratizamos el acceso a la Inteligencia Artificial en la Región de Ñuble. IA para todos y todas.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_CL">
-    <title>IA Ñuble - Plataforma Educativa en Inteligencia Artificial</title>
+    <title>IA Ñuble - EBCT en Inteligencia Artificial</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logos/favicon.png" type="image/png">
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="loader">
-            <div class="brain-icon">
-                <i class="fas fa-brain"></i>
-            </div>
-            <p>Cargando IA Ñuble...</p>
-        </div>
-    </div>
-
-    <!-- Header/Navigation -->
-    <header class="header" id="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="#inicio" class="logo">
-                    <img src="logo.png" alt="IA Ñuble Logo" class="logo-img" id="nav-logo">
-                </a>
-                <div class="nav-menu" id="nav-menu">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="#inicio" class="nav-link active">Inicio</a></li>
-                        <li class="nav-item"><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                        <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
-                        <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
-                        <li class="nav-item"><a href="#alianzas" class="nav-link">Alianzas</a></li>
-                        <li class="nav-item"><a href="#equipo" class="nav-link">Equipo</a></li>
-                        <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-particles" id="particles"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="hero-badge animate-fade-in">🏆 Proyecto Consolidado 2023-2025</span>
-                <h1 class="hero-title animate-slide-up">
-                    <span class="text-gradient">IA Ñuble</span>
-                    <br>
-                    <span class="hero-subtitle-main">Ñuble en la Era Digital</span>
-                </h1>
-                <p class="hero-description animate-slide-up delay-1">
-                    Somos la <strong>primera plataforma educativa en Inteligencia Artificial</strong> de la Región de Ñuble. 
-                    Durante más de dos años hemos trabajado incansablemente para democratizar el acceso a la tecnología, 
-                    capacitando a miles de personas, desarrollando proyectos de alto impacto y construyendo 
-                    una red de colaboración que transforma nuestra región. <strong>IA para todos y todas.</strong>
-                </p>
-                <div class="hero-buttons animate-slide-up delay-2">
-                    <a href="#proyectos" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> Conoce Nuestros Proyectos
-                    </a>
-                    <a href="#contacto" class="btn btn-secondary">
-                        <i class="fas fa-handshake"></i> Únete a la Iniciativa
-                    </a>
-                </div>
-                <div class="hero-stats animate-fade-in delay-3">
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="1500">0</span>+
-                        <span class="stat-label">Personas Capacitadas</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="21">0</span>
-                        <span class="stat-label">Comunas Alcanzadas</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="25">0</span>+
-                        <span class="stat-label">Proyectos Ejecutados</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="18">0</span>
-                        <span class="stat-label">Alianzas Activas</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image animate-float">
-                <img src="logo.png" alt="IA Ñuble" class="hero-logo">
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <a href="#nosotros" class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
+    <!-- Navegación principal -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo">
+                <img src="assets/logos/logo.png" alt="Logo IA Ñuble" class="logo-img">
+                <span class="logo-text">IA ÑUBLE</span>
             </a>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#ebct" class="nav-link">Nuestra EBCT</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#equipo" class="nav-link">Equipo</a></li>
+                <li><a href="#alianzas" class="nav-link">Alianzas</a></li>
+                <li><a href="#galeria" class="nav-link">Galería</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
         </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-            </svg>
-        </div>
-    </section>
+    </nav>
 
-    <!-- Nosotros Section -->
-    <section class="section nosotros" id="nosotros">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Nuestra Historia</span>
-                <h2 class="section-title">¿Quiénes Somos?</h2>
-                <p class="section-subtitle">
-                    Una iniciativa nacida en Ñuble, para Ñuble. Dos años construyendo 
-                    el puente hacia la era digital para nuestra comunidad.
-                </p>
-            </div>
-            <div class="nosotros-content">
-                <div class="nosotros-image reveal-left">
-                    <div class="image-container">
-                        <img src="logo.png" alt="IA Ñuble - Ñuble en la era digital">
-                        <div class="image-decoration"></div>
-                    </div>
-                </div>
-                <div class="nosotros-text reveal-right">
-                    <h3 class="nosotros-heading">IA para Todos y Todas: Nuestra Filosofía</h3>
-                    <p class="nosotros-description">
-                        <strong>IA Ñuble</strong> nació en 2023 con una visión clara: que ningún habitante de nuestra región 
-                        quede excluido de la revolución tecnológica. Desde entonces, hemos construido la plataforma 
-                        educativa en Inteligencia Artificial más completa y accesible de Ñuble, llegando a las 
-                        <strong>21 comunas de la región</strong> con programas diseñados para personas de todas las 
-                        edades, niveles educativos y contextos socioeconómicos.
-                    </p>
-                    <p class="nosotros-description">
-                        Nuestro modelo de trabajo se basa en tres pilares fundamentales: <strong>educación inclusiva</strong>, 
-                        que adapta metodologías y contenidos para cada audiencia; <strong>innovación aplicada</strong>, 
-                        desarrollando soluciones de IA que responden a problemas reales de nuestra comunidad; y 
-                        <strong>colaboración estratégica</strong>, articulando una red de instituciones públicas, privadas 
-                        y académicas comprometidas con el desarrollo regional.
-                    </p>
-                    <p class="nosotros-description">
-                        Hoy, con más de <strong>1.500 personas capacitadas</strong>, <strong>25 proyectos ejecutados</strong> y 
-                        <strong>18 alianzas activas</strong>, IA Ñuble se ha consolidado como el referente regional en 
-                        educación tecnológica, demostrando que el futuro digital se construye desde los territorios.
-                    </p>
-                    <div class="nosotros-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Educación Sin Barreras</h4>
-                                <p>Desde niños de 8 años hasta adultos mayores de 80+, con programas 100% gratuitos</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-map-marked-alt"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Cobertura Regional Total</h4>
-                                <p>Presencia activa en las 21 comunas, desde Chillán hasta las zonas rurales más remotas</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Impacto Comprobado</h4>
-                                <p>Proyectos con resultados medibles: +25% productividad agrícola, 95% satisfacción</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Sección Hero / Portada -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title animate-fade-in">IA Ñuble – Inteligencia Artificial para el territorio</h1>
+            <p class="hero-subtitle animate-fade-in-delay">EBCT (Empresa de Base Científico-Tecnológica) enfocada en proyectos de IA aplicada a salud, educación, territorio, ruralidad y desarrollo sostenible.</p>
+            <div class="hero-buttons animate-slide-up">
+                <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+                <a href="#equipo" class="btn btn-secondary">Conocer a nuestro equipo</a>
             </div>
         </div>
+        <div class="hero-overlay"></div>
     </section>
 
-    <!-- Misión, Visión, Valores -->
-    <section class="section mission-vision">
+    <!-- Sección Nuestra EBCT -->
+    <section id="ebct" class="section ebct-section">
         <div class="container">
-            <div class="cards-grid">
-                <div class="card-mvv reveal-up">
+            <h2 class="section-title">Nuestra EBCT</h2>
+            <p class="section-subtitle">Somos una Empresa de Base Científico-Tecnológica (EBCT) que desarrolla soluciones de inteligencia artificial para transformar positivamente la región de Ñuble y Chile.</p>
+            
+            <div class="ebct-cards">
+                <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Nuestra Misión</h3>
-                    <p>
-                        Democratizar el acceso a la educación en Inteligencia Artificial en la Región de Ñuble, 
-                        diseñando e implementando programas formativos inclusivos, desarrollando proyectos de 
-                        innovación tecnológica con impacto social y productivo, y articulando redes de colaboración 
-                        que impulsen el desarrollo sostenible y equitativo de nuestra comunidad. Trabajamos para que 
-                        cada persona, sin importar su edad, ubicación o condición, tenga la oportunidad de 
-                        comprender, usar y beneficiarse de las tecnologías de IA.
-                    </p>
+                    <h3 class="card-title">Misión</h3>
+                    <p class="card-text">Desarrollar soluciones de IA accesibles y éticas que resuelvan problemas reales del territorio, impulsando la innovación y el desarrollo sostenible en la región de Ñuble.</p>
                 </div>
-                <div class="card-mvv reveal-up delay-1">
+                
+                <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h3>Nuestra Visión</h3>
-                    <p>
-                        Consolidar a Ñuble como una región líder en adopción tecnológica responsable en Chile, 
-                        donde la Inteligencia Artificial sea una herramienta de desarrollo humano, productivo y social. 
-                        Aspiramos a que para 2027, cada comuna de Ñuble cuente con al menos un programa activo de 
-                        formación en IA, y que nuestra región sea reconocida nacionalmente como modelo de 
-                        democratización tecnológica desde los territorios.
-                    </p>
+                    <h3 class="card-title">Visión</h3>
+                    <p class="card-text">Ser referente nacional en la aplicación de inteligencia artificial para el desarrollo territorial, creando ecosistemas de innovación que conecten la academia, el sector público y la industria.</p>
                 </div>
-                <div class="card-mvv reveal-up delay-2">
+                
+                <div class="card">
                     <div class="card-icon">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Nuestros Valores</h3>
-                    <ul class="values-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>Inclusión radical:</strong> Nadie queda fuera</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Innovación con propósito:</strong> Tecnología que sirve</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Colaboración genuina:</strong> Construimos juntos</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Excelencia accesible:</strong> Calidad para todos</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Ética tecnológica:</strong> IA responsable</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Arraigo territorial:</strong> Desde Ñuble, para Ñuble</li>
-                    </ul>
+                    <h3 class="card-title">Áreas de Impacto</h3>
+                    <p class="card-text">Salud, educación, agricultura, gestión territorial, ruralidad, gestión de recursos hídricos, energías renovables y desarrollo económico local.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Proyectos Section -->
-    <section class="section proyectos" id="proyectos">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Portafolio de Impacto</span>
-                <h2 class="section-title">Proyectos Ejecutados</h2>
-                <p class="section-subtitle">
-                    Cada proyecto representa nuestro compromiso con la innovación y el desarrollo regional. 
-                    Conoce las iniciativas que están transformando Ñuble a través de la Inteligencia Artificial.
-                </p>
             </div>
             
-            <div class="proyectos-filter">
-                <button class="filter-btn active" data-filter="all">Todos los Proyectos</button>
+            <div class="timeline-container">
+                <h3 class="timeline-title">Hitos Importantes</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-content">
+                            <h4>Fundación de IA Ñuble</h4>
+                            <p>Creación oficial de la EBCT con foco en inteligencia artificial aplicada al territorio.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h4>Primer proyecto con gobierno regional</h4>
+                            <p>Desarrollo de sistema de predicción de demandas en salud para la región de Ñuble.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h4>Expansión a proyectos educativos</h4>
+                            <p>Lanzamiento de plataforma educativa en IA para escuelas técnicas de la región.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h4>Alianzas internacionales</h4>
+                            <p>Colaboración con centros de investigación en IA de Europa y Norteamérica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Liderazgo -->
+    <section class="section lider-section">
+        <div class="container">
+            <h2 class="section-title">Nuestra Líder</h2>
+            <div class="lider-card">
+                <div class="lider-img">
+                    <img src="assets/team/leader.jpg" alt="Foto de la líder de IA Ñuble">
+                </div>
+                <div class="lider-info">
+                    <h3 class="lider-name">Dra. Camila Rodríguez Silva</h3>
+                    <p class="lider-rol">Directora Ejecutiva / Líder EBCT</p>
+                    <p class="lider-desc">Doctora en Ciencias de la Computación con especialización en Machine Learning. Más de 10 años de experiencia en investigación aplicada y desarrollo de proyectos de IA. Ha liderado iniciativas de transformación digital en el sector público y privado, con foco en impacto territorial.</p>
+                    <button class="btn btn-primary" id="openLiderModal">Ver perfil completo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para la líder -->
+    <div class="modal" id="liderModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h2>Dra. Camila Rodríguez Silva</h2>
+                <p>Directora Ejecutiva / Líder EBCT</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img src="assets/team/leader.jpg" alt="Foto de la líder de IA Ñuble">
+                </div>
+                <div class="modal-info">
+                    <h3>Formación Académica</h3>
+                    <ul>
+                        <li>Doctorado en Ciencias de la Computación, Universidad de Chile (2018)</li>
+                        <li>Magíster en Inteligencia Artificial, Universidad de Santiago (2014)</li>
+                        <li>Ingeniería Civil en Computación, Universidad de Concepción (2011)</li>
+                    </ul>
+                    
+                    <h3>Experiencia Profesional</h3>
+                    <ul>
+                        <li>Investigadora principal en proyectos de IA aplicada a salud pública (2019-2021)</li>
+                        <li>Consultora en transformación digital para municipios de la región de Ñuble (2017-2019)</li>
+                        <li>Profesora invitada en programas de postgrado en IA (2015-actualidad)</li>
+                    </ul>
+                    
+                    <h3>Logros Destacados</h3>
+                    <ul>
+                        <li>Premio Innovación Pública 2022 por sistema de predicción de demanda en salud</li>
+                        <li>5 publicaciones indexadas en revistas internacionales de IA aplicada</li>
+                        <li>Mentora de 15 tesistas en temas de IA para desarrollo territorial</li>
+                    </ul>
+                    
+                    <div class="modal-social">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="#" class="social-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i> Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Equipo -->
+    <section id="equipo" class="section team-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <p class="section-subtitle">Un equipo multidisciplinario de profesionales apasionados por la inteligencia artificial y su potencial para transformar la región.</p>
+            
+            <div class="team-grid" id="teamGrid">
+                <!-- Tarjetas de equipo se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para integrantes del equipo -->
+    <div class="modal" id="teamModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h2 id="teamModalName">Nombre del integrante</h2>
+                <p id="teamModalRole">Rol del integrante</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img id="teamModalImg" src="" alt="Foto del integrante">
+                </div>
+                <div class="modal-info">
+                    <h3>Especialidad</h3>
+                    <p id="teamModalSpecialty"></p>
+                    
+                    <h3>Formación</h3>
+                    <p id="teamModalEducation"></p>
+                    
+                    <h3>Proyectos Destacados</h3>
+                    <p id="teamModalProjects"></p>
+                    
+                    <h3>Contacto</h3>
+                    <p id="teamModalContact"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Proyectos con Carrusel -->
+    <section id="proyectos" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <p class="section-subtitle">Soluciones de IA desarrolladas para abordar desafíos específicos del territorio.</p>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="projectsCarousel">
+                    <!-- Slides de proyectos se generarán dinámicamente con JavaScript -->
+                </div>
+                
+                <!-- Controles del carrusel -->
+                <button class="carousel-control prev" id="carouselPrev" aria-label="Proyecto anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-control next" id="carouselNext" aria-label="Proyecto siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicadores del carrusel -->
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <!-- Indicadores se generarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para detalles de proyecto -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h2 id="projectModalName">Nombre del proyecto</h2>
+                <div class="tags-container" id="projectModalTags">
+                    <!-- Etiquetas se generarán dinámicamente -->
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Descripción Extendida</h3>
+                <p id="projectModalDescription"></p>
+                
+                <h3>Tecnologías Utilizadas</h3>
+                <div class="tech-container" id="projectModalTech">
+                    <!-- Tecnologías se generarán dinámicamente -->
+                </div>
+                
+                <h3>Estado del Proyecto</h3>
+                <p id="projectModalStatus"></p>
+                
+                <h3>Impacto Esperado</h3>
+                <p id="projectModalImpact"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Alianzas -->
+    <section id="alianzas" class="section alliances-section">
+        <div class="container">
+            <h2 class="section-title">Alianzas y Colaboradores</h2>
+            <p class="section-subtitle">Trabajamos con instituciones líderes para potenciar el impacto de nuestros proyectos.</p>
+            
+            <div class="alliances-carousel">
+                <div class="alliances-track" id="alliancesTrack">
+                    <!-- Logos de alianzas se generarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+            
+            <div class="alliances-controls">
+                <button class="alliance-prev" id="alliancePrev" aria-label="Aliado anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="alliance-next" id="allianceNext" aria-label="Aliado siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería -->
+    <section id="galeria" class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galería de Proyectos</h2>
+            <p class="section-subtitle">Imágenes de nuestros proyectos, prototipos, actividades y talleres.</p>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="salud">Salud</button>
                 <button class="filter-btn" data-filter="educacion">Educación</button>
-                <button class="filter-btn" data-filter="comunidad">Comunidad</button>
-                <button class="filter-btn" data-filter="innovacion">Innovación</button>
-                <button class="filter-btn" data-filter="agricultura">Agricultura</button>
+                <button class="filter-btn" data-filter="territorio">Territorio</button>
+                <button class="filter-btn" data-filter="eventos">Eventos</button>
             </div>
-
-            <div class="proyectos-grid">
-                <!-- Proyecto 1 -->
-                <div class="proyecto-card reveal-up" data-category="educacion">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Educación</span>
-                            <span class="proyecto-status completado">Completado</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">IA en el Aula: Docentes 4.0</h3>
-                        <p class="proyecto-excerpt">
-                            Programa integral de capacitación para docentes en herramientas de IA aplicadas 
-                            a la educación. Incluye ChatGPT, generadores de contenido, evaluación automatizada 
-                            y estrategias pedagógicas innovadoras.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-users"></i> 280 docentes certificados</span>
-                            <span><i class="fas fa-school"></i> 45 establecimientos</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">ChatGPT</span>
-                            <span class="tag">Canva IA</span>
-                            <span class="tag">Pedagogía</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="1">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 2 -->
-                <div class="proyecto-card reveal-up delay-1" data-category="comunidad">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Comunidad</span>
-                            <span class="proyecto-status activo">En Ejecución</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-users-cog"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">IA Sin Fronteras: Alfabetización Digital Rural</h3>
-                        <p class="proyecto-excerpt">
-                            Programa itinerante de alfabetización digital e introducción a la IA 
-                            diseñado especialmente para adultos mayores y comunidades rurales aisladas. 
-                            Llevamos la tecnología donde más se necesita.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-users"></i> 520+ participantes</span>
-                            <span><i class="fas fa-map-marker-alt"></i> 21 comunas</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">Adultos Mayores</span>
-                            <span class="tag">Rural</span>
-                            <span class="tag">Inclusión</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="2">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="proyecto-card reveal-up delay-2" data-category="innovacion">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Innovación</span>
-                            <span class="proyecto-status activo">Operativo</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">Asistente Virtual Municipal Ñuble</h3>
-                        <p class="proyecto-excerpt">
-                            Chatbot inteligente con procesamiento de lenguaje natural para atención 
-                            ciudadana 24/7. Responde consultas sobre trámites municipales, servicios 
-                            públicos y orientación general, reduciendo tiempos de espera en un 60%.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-comments"></i> 12.000+ consultas</span>
-                            <span><i class="fas fa-clock"></i> 24/7 operativo</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">NLP</span>
-                            <span class="tag">Chatbot</span>
-                            <span class="tag">Gobierno Digital</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="3">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 4 -->
-                <div class="proyecto-card reveal-up" data-category="agricultura">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Agricultura</span>
-                            <span class="proyecto-status completado">Fase 2 Completa</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-seedling"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">AgroIA Ñuble: Agricultura Inteligente</h3>
-                        <p class="proyecto-excerpt">
-                            Sistema integral de predicción y monitoreo agrícola que utiliza machine learning 
-                            para analizar datos climáticos, satelitales y de suelo. Optimiza decisiones de 
-                            riego, siembra y cosecha para pequeños y medianos agricultores.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-tractor"></i> 85 agricultores</span>
-                            <span><i class="fas fa-chart-line"></i> +28% rendimiento</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">IoT</span>
-                            <span class="tag">Viti-vinícola</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="4">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 5 -->
-                <div class="proyecto-card reveal-up delay-1" data-category="educacion">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Educación</span>
-                            <span class="proyecto-status completado">3ª Generación</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">Bootcamp IA Joven: Programadores del Futuro</h3>
-                        <p class="proyecto-excerpt">
-                            Programa intensivo de 12 semanas para jóvenes de enseñanza media. 
-                            Formación en Python, fundamentos de machine learning, desarrollo de 
-                            proyectos reales y mentorias con profesionales del sector tech.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-user-graduate"></i> 180 graduados</span>
-                            <span><i class="fas fa-award"></i> 92% empleabilidad</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">ML</span>
-                            <span class="tag">Certificación</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="5">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 6 -->
-                <div class="proyecto-card reveal-up delay-2" data-category="innovacion">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Innovación</span>
-                            <span class="proyecto-status activo">Piloto Activo</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">SaludIA: Telemedicina Inteligente Rural</h3>
-                        <p class="proyecto-excerpt">
-                            Plataforma de telemedicina con asistencia de IA para diagnóstico preliminar 
-                            y triaje en zonas rurales con acceso limitado a salud. Reduce tiempos de 
-                            derivación y mejora la cobertura médica en comunidades aisladas.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-hospital"></i> 8 postas rurales</span>
-                            <span><i class="fas fa-user-md"></i> 2.400+ atenciones</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">Telemedicina</span>
-                            <span class="tag">Diagnóstico IA</span>
-                            <span class="tag">Salud Rural</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="6">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 7 - NUEVO -->
-                <div class="proyecto-card reveal-up" data-category="comunidad">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Comunidad</span>
-                            <span class="proyecto-status completado">Completado</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-female"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">Mujeres en IA: Liderazgo Tech Femenino</h3>
-                        <p class="proyecto-excerpt">
-                            Programa de empoderamiento tecnológico para mujeres de Ñuble. 
-                            Formación en herramientas de IA aplicadas a emprendimiento, 
-                            automatización de negocios y desarrollo de habilidades digitales avanzadas.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-female"></i> 150 mujeres graduadas</span>
-                            <span><i class="fas fa-store"></i> 45 emprendimientos</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">Emprendimiento</span>
-                            <span class="tag">Género</span>
-                            <span class="tag">Digitalización</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="7">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 8 - NUEVO -->
-                <div class="proyecto-card reveal-up delay-1" data-category="educacion">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Educación</span>
-                            <span class="proyecto-status activo">En Curso</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-child"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">IA Kids: Pequeños Innovadores</h3>
-                        <p class="proyecto-excerpt">
-                            Talleres lúdicos de introducción a la IA para niños de 8 a 14 años. 
-                            Aprendizaje basado en juegos, robótica educativa y proyectos creativos 
-                            que despiertan el interés por la tecnología desde temprana edad.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-child"></i> 320 niños</span>
-                            <span><i class="fas fa-school"></i> 25 escuelas</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">Scratch</span>
-                            <span class="tag">Robótica</span>
-                            <span class="tag">Lúdico</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="8">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Proyecto 9 - NUEVO -->
-                <div class="proyecto-card reveal-up delay-2" data-category="agricultura">
-                    <div class="proyecto-image">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-category">Agricultura</span>
-                            <span class="proyecto-status activo">Piloto</span>
-                        </div>
-                        <div class="proyecto-icon-placeholder">
-                            <i class="fas fa-wine-bottle"></i>
-                        </div>
-                    </div>
-                    <div class="proyecto-content">
-                        <h3 class="proyecto-title">VinoIA: Inteligencia en Viñedos del Itata</h3>
-                        <p class="proyecto-excerpt">
-                            Sistema de visión artificial y análisis predictivo para el sector 
-                            vitivinícola del Valle del Itata. Detecta enfermedades en hojas, 
-                            optimiza la vendimia y mejora la calidad de la uva patrimonial.
-                        </p>
-                        <div class="proyecto-meta">
-                            <span><i class="fas fa-wine-glass-alt"></i> 12 viñas</span>
-                            <span><i class="fas fa-leaf"></i> 95% precisión detección</span>
-                        </div>
-                        <div class="proyecto-tags">
-                            <span class="tag">Visión Artificial</span>
-                            <span class="tag">Vitivinícola</span>
-                            <span class="tag">Patrimonio</span>
-                        </div>
-                        <button class="btn-proyecto" data-project="9">
-                            Ver Caso Completo <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Imágenes de galería se generarán dinámicamente con JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Servicios Section -->
-    <section class="section servicios" id="servicios">
-        <div class="container">
-            <div class="section-header light">
-                <span class="section-badge">Soluciones Integrales</span>
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <p class="section-subtitle">
-                    Ofrecemos un ecosistema completo de servicios diseñados para acompañarte 
-                    en cada etapa de tu viaje hacia la Inteligencia Artificial, desde la formación inicial 
-                    hasta la implementación de soluciones avanzadas.
-                </p>
+    <!-- Modal para galería (lightbox) -->
+    <div class="modal lightbox" id="galleryModal">
+        <div class="lightbox-content">
+            <span class="modal-close">&times;</span>
+            <div class="lightbox-img-container">
+                <img id="lightboxImg" src="" alt="Imagen ampliada">
             </div>
-
-            <div class="servicios-grid">
-                <div class="servicio-card reveal-up">
-                    <div class="servicio-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Capacitaciones Certificadas</h3>
-                    <p>
-                        Programas de formación presenciales y virtuales con metodologías activas, 
-                        diseñados por expertos y adaptados a diferentes niveles. Desde talleres 
-                        introductorios de 4 horas hasta programas intensivos de 12 semanas con 
-                        certificación respaldada por instituciones de educación superior.
-                    </p>
-                    <ul class="servicio-features">
-                        <li><i class="fas fa-check"></i> Introducción a IA (4-8 horas)</li>
-                        <li><i class="fas fa-check"></i> Bootcamps intensivos (8-12 semanas)</li>
-                        <li><i class="fas fa-check"></i> Formación corporativa a medida</li>
-                        <li><i class="fas fa-check"></i> Certificación con validez nacional</li>
-                    </ul>
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle">Título de la imagen</h3>
+                <p id="lightboxDesc">Descripción de la imagen</p>
+                <div class="lightbox-category">
+                    <span id="lightboxCategory">Categoría</span>
                 </div>
+            </div>
+            <div class="lightbox-controls">
+                <button class="lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-next" id="lightboxNext" aria-label="Imagen siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
-                <div class="servicio-card reveal-up delay-1">
-                    <div class="servicio-icon">
-                        <i class="fas fa-cogs"></i>
+    <!-- Sección Testimonios -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Testimonios e Impacto</h2>
+            <p class="section-subtitle">Lo que dicen nuestros colaboradores y beneficiarios sobre nuestro trabajo.</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"La plataforma de IA para diagnóstico temprano de enfermedades respiratorias ha sido revolucionaria en nuestro centro de salud rural. Ha mejorado significativamente nuestra capacidad de respuesta."</p>
                     </div>
-                    <h3>Consultoría Estratégica en IA</h3>
-                    <p>
-                        Acompañamos a empresas, instituciones públicas y organizaciones en su 
-                        proceso de transformación digital. Realizamos diagnósticos tecnológicos, 
-                        diseñamos roadmaps de implementación y desarrollamos pruebas de concepto 
-                        que demuestran el valor de la IA para tu organización.
-                    </p>
-                    <ul class="servicio-features">
-                        <li><i class="fas fa-check"></i> Diagnóstico de madurez digital</li>
-                        <li><i class="fas fa-check"></i> Roadmap de implementación IA</li>
-                        <li><i class="fas fa-check"></i> Desarrollo de POCs y prototipos</li>
-                        <li><i class="fas fa-check"></i> Acompañamiento técnico continuo</li>
-                    </ul>
-                </div>
-
-                <div class="servicio-card reveal-up delay-2">
-                    <div class="servicio-icon">
-                        <i class="fas fa-project-diagram"></i>
+                    <div class="testimonial-author">
+                        <h4>Dr. Alejandro Méndez</h4>
+                        <p>Director, Centro de Salud Rural Las Trancas</p>
                     </div>
-                    <h3>Desarrollo de Proyectos de IA</h3>
-                    <p>
-                        Diseñamos y ejecutamos proyectos de innovación con tecnologías de IA 
-                        para resolver desafíos específicos de la región. Desde agricultura inteligente 
-                        hasta atención ciudadana, desarrollamos soluciones end-to-end que generan 
-                        impacto medible y sostenible en el tiempo.
-                    </p>
-                    <ul class="servicio-features">
-                        <li><i class="fas fa-check"></i> Levantamiento de necesidades</li>
-                        <li><i class="fas fa-check"></i> Diseño de arquitectura de solución</li>
-                        <li><i class="fas fa-check"></i> Desarrollo e implementación</li>
-                        <li><i class="fas fa-check"></i> Monitoreo y mejora continua</li>
-                    </ul>
                 </div>
-
-                <div class="servicio-card reveal-up">
-                    <div class="servicio-icon">
-                        <i class="fas fa-users"></i>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"La colaboración con IA Ñuble nos ha permitido implementar soluciones tecnológicas avanzadas en nuestras escuelas, preparando a los estudiantes para los desafíos del futuro digital."</p>
                     </div>
-                    <h3>Programas de Inclusión Digital</h3>
-                    <p>
-                        Llevamos la educación en IA a quienes más la necesitan. Programas 
-                        especialmente diseñados para adultos mayores, comunidades rurales, 
-                        mujeres emprendedoras y grupos en situación de vulnerabilidad. 
-                        Nadie queda fuera de la revolución tecnológica.
-                    </p>
-                    <ul class="servicio-features">
-                        <li><i class="fas fa-check"></i> Alfabetización digital básica</li>
-                        <li><i class="fas fa-check"></i> Talleres para adultos mayores 60+</li>
-                        <li><i class="fas fa-check"></i> Programas escolares K-12</li>
-                        <li><i class="fas fa-check"></i> Formación en zonas rurales aisladas</li>
-                    </ul>
-                </div>
-
-                <div class="servicio-card reveal-up delay-1">
-                    <div class="servicio-icon">
-                        <i class="fas fa-microphone-alt"></i>
+                    <div class="testimonial-author">
+                        <h4>María Inés González</h4>
+                        <p>Jefa Depto. Educación, Municipalidad de Chillán</p>
                     </div>
-                    <h3>Charlas, Webinars y Eventos</h3>
-                    <p>
-                        Organizamos y participamos en eventos de difusión sobre IA, tendencias 
-                        tecnológicas y el futuro del trabajo. Keynotes inspiradores, paneles de 
-                        expertos y webinars interactivos para empresas, instituciones educativas 
-                        y público general. Contenido actualizado y de alto impacto.
-                    </p>
-                    <ul class="servicio-features">
-                        <li><i class="fas fa-check"></i> Keynotes y charlas magistrales</li>
-                        <li><i class="fas fa-check"></i> Paneles y mesas redondas</li>
-                        <li><i class="fas fa-check"></i> Webinars mensuales gratuitos</li>
-                        <li><i class="fas fa-check"></i> Eventos corporativos personalizados</li>
-                    </ul>
                 </div>
-
-                <div class="servicio-card reveal-up delay-2">
-                    <div class="servicio-icon">
-                        <i class="fas fa-handshake"></i>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Como agricultor, el sistema de predicción de rendimiento de cultivos basado en IA ha transformado nuestra manera de planificar la temporada, reduciendo riesgos y optimizando recursos."</p>
                     </div>
-                    <h3>Articulación de Alianzas</h3>
-                    <p>
-                        Facilitamos la conexión entre instituciones, empresas y organizaciones 
-                        interesadas en colaborar en proyectos de innovación. Gestionamos redes 
-                        de colaboración, vinculamos oferta y demanda de talento tech, y 
-                        canalizamos oportunidades de financiamiento para proyectos de IA.
-                    </p>
-                    <ul class="servicio-features">
-                        <li><i class="fas fa-check"></i> Red regional de innovación</li>
-                        <li><i class="fas fa-check"></i> Proyectos colaborativos multi-actor</li>
-                        <li><i class="fas fa-check"></i> Vinculación academia-empresa</li>
-                        <li><i class="fas fa-check"></i> Gestión de fondos concursables</li>
-                    </ul>
+                    <div class="testimonial-author">
+                        <h4>Juan Carlos Ramírez</h4>
+                        <p>Presidente, Cooperativa Agrícola Ñuble</p>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="testimonials-controls">
+                <button class="testimonial-prev" id="testimonialPrev" aria-label="Testimonio anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonial-indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                </div>
+                <button class="testimonial-next" id="testimonialNext" aria-label="Testimonio siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Alianzas Section -->
-    <section class="section alianzas" id="alianzas">
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section contact-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Ecosistema de Colaboración</span>
-                <h2 class="section-title">Nuestras Alianzas Estratégicas</h2>
-                <p class="section-subtitle">
-                    El éxito de IA Ñuble se construye sobre una red sólida de colaboración. 
-                    Trabajamos junto a las instituciones más comprometidas con el desarrollo regional.
-                </p>
-            </div>
-
-            <div class="alianzas-intro reveal-up">
-                <p>
-                    En IA Ñuble entendemos que los grandes desafíos requieren respuestas colectivas. Por eso, 
-                    hemos articulado un <strong>ecosistema de 18 alianzas activas</strong> que incluye universidades, 
-                    gobiernos locales, empresas tecnológicas y organizaciones de la sociedad civil. Esta red 
-                    nos permite multiplicar nuestro impacto, compartir recursos y conocimientos, y asegurar 
-                    la sostenibilidad de nuestras iniciativas en el largo plazo. Cada alianza representa un 
-                    compromiso compartido con la visión de una región más conectada, educada y preparada para el futuro.
-                </p>
-            </div>
-
-            <div class="alianzas-categories">
-                <div class="alianza-category reveal-up">
-                    <h3><i class="fas fa-university"></i> Instituciones Educativas</h3>
-                    <div class="alianzas-logos">
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <span>Universidad de Concepción</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <span>Universidad del Bío-Bío</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <span>INACAP Chillán</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <span>CFT Ñuble</span>
-                        </div>
+            <h2 class="section-title">Contáctanos</h2>
+            <p class="section-subtitle">¿Tienes un proyecto en mente o quieres colaborar con nosotros? Escríbenos.</p>
+            
+            <div class="contact-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error-message" id="nameError"></div>
                     </div>
-                </div>
-
-                <div class="alianza-category reveal-up delay-1">
-                    <h3><i class="fas fa-landmark"></i> Sector Público</h3>
-                    <div class="alianzas-logos">
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <span>Gobierno Regional de Ñuble</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <span>Municipalidad de Chillán</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <span>CORFO Ñuble</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <span>SERCOTEC</span>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message" id="emailError"></div>
                     </div>
-                </div>
-
-                <div class="alianza-category reveal-up delay-2">
-                    <h3><i class="fas fa-building"></i> Empresas y Organizaciones</h3>
-                    <div class="alianzas-logos">
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <span>Cámara de Comercio Ñuble</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <span>Asociación de Industriales</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <span>Fundación Chile</span>
-                        </div>
-                        <div class="alianza-item">
-                            <div class="alianza-placeholder">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <span>Hub Tecnológico Ñuble</span>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="organization">Organización</label>
+                        <input type="text" id="organization" name="organization">
                     </div>
-                </div>
-            </div>
-
-            <div class="alianzas-cta reveal-up">
-                <h3>¿Quieres ser parte de nuestra red de innovación?</h3>
-                <p>
-                    Si tu organización comparte nuestra visión de democratizar la IA en Ñuble, 
-                    nos encantaría conocerte. Exploremos juntos oportunidades de colaboración 
-                    que generen impacto real en nuestra región.
-                </p>
-                <a href="#contacto" class="btn btn-primary">
-                    <i class="fas fa-handshake"></i> Conviértete en Aliado Estratégico
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Equipo Section -->
-    <section class="section equipo" id="equipo">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Conoce al Equipo</span>
-                <h2 class="section-title">Quiénes Hacemos IA Ñuble</h2>
-                <p class="section-subtitle">
-                    Un equipo multidisciplinario comprometido con la educación y la innovación tecnológica
-                </p>
-            </div>
-
-            <div class="equipo-grid">
-                <div class="equipo-card reveal-up">
-                    <div class="equipo-image">
-                        <div class="equipo-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="equipo-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <div class="error-message" id="messageError"></div>
                     </div>
-                    <div class="equipo-info">
-                        <h3>Director/a General</h3>
-                        <span class="equipo-role">Liderazgo Estratégico</span>
-                        <p>
-                            Responsable de la visión y dirección estratégica de IA Ñuble, 
-                            con experiencia en gestión de proyectos de innovación tecnológica.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="equipo-card reveal-up delay-1">
-                    <div class="equipo-image">
-                        <div class="equipo-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="equipo-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    <div class="equipo-info">
-                        <h3>Coordinador/a Técnico</h3>
-                        <span class="equipo-role">Desarrollo e Innovación</span>
-                        <p>
-                            Lidera el desarrollo de proyectos tecnológicos y la implementación 
-                            de soluciones de IA para las iniciativas de la plataforma.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="equipo-card reveal-up delay-2">
-                    <div class="equipo-image">
-                        <div class="equipo-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="equipo-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    <div class="equipo-info">
-                        <h3>Coordinador/a Educativo</h3>
-                        <span class="equipo-role">Formación y Capacitación</span>
-                        <p>
-                            Diseña y coordina los programas de capacitación, asegurando 
-                            metodologías efectivas y contenidos actualizados.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="equipo-card reveal-up">
-                    <div class="equipo-image">
-                        <div class="equipo-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="equipo-social">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    <div class="equipo-info">
-                        <h3>Coordinador/a Comunitario</h3>
-                        <span class="equipo-role">Vinculación Territorial</span>
-                        <p>
-                            Gestiona las relaciones con comunidades y organizaciones, 
-                            asegurando el alcance inclusivo de nuestros programas.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="equipo-join reveal-up">
-                <div class="join-content">
-                    <h3>¿Quieres ser parte del equipo?</h3>
-                    <p>
-                        Buscamos personas apasionadas por la tecnología y la educación 
-                        que quieran contribuir al desarrollo de Ñuble.
-                    </p>
-                    <a href="#contacto" class="btn btn-outline">
-                        <i class="fas fa-paper-plane"></i> Contáctanos
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonios Section -->
-    <section class="section testimonios">
-        <div class="container">
-            <div class="section-header light">
-                <span class="section-badge">Testimonios</span>
-                <h2 class="section-title">Lo Que Dicen de Nosotros</h2>
-                <p class="section-subtitle">
-                    Experiencias de quienes han participado en nuestros programas
-                </p>
-            </div>
-
-            <div class="testimonios-slider">
-                <div class="testimonios-track" id="testimonios-track">
-                    <div class="testimonio-card">
-                        <div class="testimonio-content">
-                            <div class="testimonio-quote">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p>
-                                "Gracias a IA Ñuble pude entender cómo la inteligencia artificial 
-                                puede ayudarme en mi sala de clases. Ahora uso herramientas de IA 
-                                para crear material educativo y mis estudiantes están más motivados que nunca."
-                            </p>
-                        </div>
-                        <div class="testimonio-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>María González</h4>
-                                <span>Docente, Liceo de Chillán</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonio-card">
-                        <div class="testimonio-content">
-                            <div class="testimonio-quote">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p>
-                                "El bootcamp de IA me abrió las puertas a un mundo nuevo. Hoy estoy 
-                                estudiando ingeniería informática y todo empezó con ese taller. 
-                                IA Ñuble cambió mi perspectiva sobre mi futuro profesional."
-                            </p>
-                        </div>
-                        <div class="testimonio-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>Carlos Muñoz</h4>
-                                <span>Ex participante Bootcamp IA Jóvenes</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonio-card">
-                        <div class="testimonio-content">
-                            <div class="testimonio-quote">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p>
-                                "Nunca pensé que a mis 68 años podría aprender sobre tecnología. 
-                                Los talleres comunitarios de IA Ñuble me enseñaron a usar herramientas 
-                                que ahora me ayudan en mi día a día. ¡Nunca es tarde para aprender!"
-                            </p>
-                        </div>
-                        <div class="testimonio-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>Rosa Sepúlveda</h4>
-                                <span>Participante Taller Comunitario</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonio-card">
-                        <div class="testimonio-content">
-                            <div class="testimonio-quote">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p>
-                                "La consultoría de IA Ñuble nos ayudó a implementar un sistema de 
-                                predicción para nuestra cosecha. Este año aumentamos nuestra producción 
-                                en un 25% gracias a las recomendaciones basadas en datos."
-                            </p>
-                        </div>
-                        <div class="testimonio-author">
-                            <div class="author-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="author-info">
-                                <h4>Pedro Arriagada</h4>
-                                <span>Agricultor, Valle del Itata</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonios-controls">
-                    <button class="testimonios-btn prev" id="testimonios-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="testimonios-dots" id="testimonios-dots"></div>
-                    <button class="testimonios-btn next" id="testimonios-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto Section -->
-    <section class="section contacto" id="contacto">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Conversemos</span>
-                <h2 class="section-title">Contáctanos</h2>
-                <p class="section-subtitle">
-                    ¿Tienes un proyecto en mente? ¿Quieres capacitar a tu equipo? ¿Buscas alianzas? 
-                    Estamos aquí para escucharte y construir juntos el futuro digital de Ñuble.
-                </p>
-            </div>
-
-            <div class="contacto-content">
-                <div class="contacto-info reveal-left">
-                    <h3>Información de Contacto</h3>
-                    <p>
-                        Nuestro equipo está disponible para responder tus consultas, 
-                        evaluar propuestas de colaboración o ayudarte a dar los primeros 
-                        pasos en tu viaje hacia la Inteligencia Artificial. Respondemos 
-                        en un plazo máximo de 48 horas hábiles.
-                    </p>
-
-                    <div class="contacto-items">
-                        <div class="contacto-item">
-                            <div class="contacto-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contacto-text">
-                                <h4>Ubicación</h4>
-                                <p>Chillán, Región de Ñuble, Chile</p>
-                            </div>
-                        </div>
-
-                        <div class="contacto-item">
-                            <div class="contacto-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contacto-text">
-                                <h4>Email</h4>
-                                <p>contacto@ianuble.cl</p>
-                            </div>
-                        </div>
-
-                        <div class="contacto-item">
-                            <div class="contacto-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contacto-text">
-                                <h4>Teléfono</h4>
-                                <p>+56 9 1234 5678</p>
-                            </div>
-                        </div>
-
-                        <div class="contacto-item">
-                            <div class="contacto-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contacto-text">
-                                <h4>Horario de Atención</h4>
-                                <p>Lunes a Viernes: 9:00 - 18:00</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contacto-social">
-                        <h4>Síguenos en redes sociales</h4>
-                        <div class="social-links">
-                            <a href="#" class="social-btn" title="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-btn" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-btn" title="Twitter/X">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-btn" title="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-btn" title="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contacto-form-container reveal-right">
-                    <form class="contacto-form" id="contacto-form">
-                        <div class="form-group">
-                            <label for="nombre">Nombre Completo *</label>
-                            <input type="text" id="nombre" name="nombre" required 
-                                   placeholder="Tu nombre">
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required 
-                                       placeholder="tu@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono" 
-                                       placeholder="+56 9 1234 5678">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="asunto">Asunto *</label>
-                            <select id="asunto" name="asunto" required>
-                                <option value="">Selecciona un asunto</option>
-                                <option value="capacitacion">Información sobre capacitaciones</option>
-                                <option value="proyecto">Propuesta de proyecto</option>
-                                <option value="alianza">Alianza estratégica</option>
-                                <option value="prensa">Prensa y medios</option>
-                                <option value="otro">Otro</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje *</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" required 
-                                      placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
-                        </div>
-
-                        <div class="form-group form-checkbox">
-                            <input type="checkbox" id="privacidad" name="privacidad" required>
-                            <label for="privacidad">
-                                Acepto la política de privacidad y el tratamiento de mis datos personales
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content reveal-up">
-                <div class="newsletter-text">
-                    <h3>📩 Mantente al Día con IA Ñuble</h3>
-                    <p>
-                        Suscríbete a nuestro boletín mensual y recibe las últimas noticias sobre 
-                        eventos, cursos, becas, convocatorias y novedades del mundo de la IA. 
-                        Más de 800 suscriptores ya son parte de nuestra comunidad.
-                    </p>
-                </div>
-                <form class="newsletter-form" id="newsletter-form">
-                    <input type="email" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Suscribirme Gratis
-                    </button>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
                 </form>
+                
+                <div class="contact-info">
+                    <h3>Información de contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Correo electrónico</h4>
+                            <p>contacto@ianuble.cl</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Chillán, Región de Ñuble, Chile</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+56 42 123 4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h4>Síguenos en redes sociales</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-wave">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0L60 15C120 30 240 60 360 75C480 90 600 90 720 82.5C840 75 960 60 1080 52.5C1200 45 1320 45 1380 45L1440 45V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#0a2540"/>
-            </svg>
-        </div>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <img src="banner.png" alt="IA Ñuble" class="footer-logo">
-                    <p>
-                        <strong>IA Ñuble</strong> es la plataforma educativa líder en Inteligencia Artificial 
-                        de la Región de Ñuble. Desde 2023, trabajamos para democratizar el acceso 
-                        a la tecnología y construir un futuro más inclusivo y próspero para 
-                        todos los habitantes de nuestra región.
-                    </p>
-                    <div class="footer-stats">
-                        <span><strong>1.500+</strong> personas capacitadas</span>
-                        <span><strong>21</strong> comunas alcanzadas</span>
-                        <span><strong>25+</strong> proyectos ejecutados</span>
-                    </div>
-                    <div class="footer-social">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/logos/logo.png" alt="Logo IA Ñuble" class="footer-logo-img">
+                    <div class="footer-logo-text">
+                        <h3>IA ÑUBLE</h3>
+                        <p>EBCT de innovación y ciencia aplicada</p>
                     </div>
                 </div>
-
+                
                 <div class="footer-links">
-                    <h4>Enlaces Rápidos</h4>
+                    <h4>Enlaces rápidos</h4>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#ebct">Nuestra EBCT</a></li>
                         <li><a href="#proyectos">Proyectos</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#alianzas">Alianzas</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-links">
-                    <h4>Servicios</h4>
-                    <ul>
-                        <li><a href="#servicios">Capacitaciones</a></li>
-                        <li><a href="#servicios">Consultoría en IA</a></li>
-                        <li><a href="#servicios">Desarrollo de Proyectos</a></li>
-                        <li><a href="#servicios">Programas Comunitarios</a></li>
-                        <li><a href="#servicios">Charlas y Conferencias</a></li>
-                    </ul>
-                </div>
-
+                
                 <div class="footer-contact">
                     <h4>Contacto</h4>
-                    <ul>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            Chillán, Región de Ñuble, Chile
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            contacto@ianuble.cl
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            +56 9 1234 5678
-                        </li>
-                    </ul>
+                    <p><i class="fas fa-envelope"></i> contacto@ianuble.cl</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Chillán, Región de Ñuble, Chile</p>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 IA Ñuble. Todos los derechos reservados.</p>
-                <p>Desarrollado con <i class="fas fa-heart"></i> en Ñuble</p>
+                <p>&copy; <span id="currentYear"></span> IA Ñuble – EBCT de innovación y ciencia aplicada</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Modal para Proyectos -->
-    <div class="modal" id="proyecto-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <button class="modal-close" id="modal-close">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-content" id="modal-content">
-                <!-- El contenido se carga dinámicamente -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Botón Scroll to Top -->
-    <button class="scroll-top" id="scroll-top" title="Volver arriba">
+    <!-- Botón para volver arriba -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
+    <!-- Mensaje de éxito/error del formulario -->
+    <div class="message-toast" id="messageToast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
