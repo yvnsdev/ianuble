@@ -201,10 +201,64 @@ document.addEventListener('DOMContentLoaded', function(){
   // Abrir modal de la líder
   document.getElementById('open-leader-modal').addEventListener('click', ()=>{
     const html = `
-      <h2>María Pérez — Directora</h2>
-      <p><strong>Formación:</strong> PhD en Ciencias de la Computación, MSc en Salud Digital.</p>
-      <p><strong>Experiencia:</strong> +10 años en investigación aplicada, múltiples proyectos con hospitales y municipios.</p>
-      <p><a href="#">LinkedIn — perfil</a></p>
+      <div class="modal-header">
+        <img src="assets/team/carola-figueroa.jpg" alt="Dra. Carola Figueroa" class="modal-avatar">
+        <div class="modal-header-info">
+          <h2>Dra. Carola Figueroa Flores</h2>
+          <span class="modal-role">Directora IA Ñuble • Investigadora UBB</span>
+        </div>
+      </div>
+      
+      <p>Investigadora y académica de la Universidad del Bío-Bío con amplia trayectoria en ciencias de la computación e inteligencia artificial aplicada. Lidera el desarrollo de soluciones tecnológicas innovadoras para la región de Ñuble.</p>
+      
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <span class="modal-stat-number">15+</span>
+          <span class="modal-stat-label">Años experiencia</span>
+        </div>
+        <div class="modal-stat">
+          <span class="modal-stat-number">30+</span>
+          <span class="modal-stat-label">Publicaciones</span>
+        </div>
+        <div class="modal-stat">
+          <span class="modal-stat-number">12</span>
+          <span class="modal-stat-label">Proyectos I+D</span>
+        </div>
+      </div>
+      
+      <h3>Formación Académica</h3>
+      <ul>
+        <li><strong>Doctorado en Ciencias de la Computación</strong> - Especialización en Inteligencia Artificial</li>
+        <li><strong>Magíster en Informática</strong> - Universidad del Bío-Bío</li>
+        <li><strong>Ingeniería Civil Informática</strong> - Universidad del Bío-Bío</li>
+      </ul>
+      
+      <h3>Líneas de Investigación</h3>
+      <div class="modal-tags">
+        <span class="modal-tag">Machine Learning</span>
+        <span class="modal-tag">Deep Learning</span>
+        <span class="modal-tag">Procesamiento de Imágenes</span>
+        <span class="modal-tag">IA en Salud</span>
+        <span class="modal-tag">Visión por Computadora</span>
+      </div>
+      
+      <h3>Proyectos Destacados</h3>
+      <ul>
+        <li><strong>Aula Segura:</strong> Sistema de detección de violencia escolar mediante IA</li>
+        <li><strong>Core Drone:</strong> Monitoreo ambiental con drones autónomos e IA</li>
+        <li><strong>SITME:</strong> Tamizaje multimodal de endometriosis</li>
+      </ul>
+      
+      <div class="modal-links">
+        <a href="https://www.researchgate.net/profile/Carola-Figueroa-Flores" target="_blank" class="modal-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          ResearchGate
+        </a>
+        <a href="mailto:cfigueroa@ubiobio.cl" class="modal-link outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          Contactar
+        </a>
+      </div>
     `;
     openModal(html);
   });
@@ -215,21 +269,147 @@ document.addEventListener('DOMContentLoaded', function(){
       const name = card.dataset.name || 'Integrante';
       const role = card.dataset.role || '';
       const bio = card.dataset.bio || '';
-      const html = `<h3>${name}</h3><p><strong>${role}</strong></p><p>${bio}</p>`;
+      const expertise = card.dataset.expertise || '';
+      const photo = card.querySelector('.team-photo img')?.src || '';
+      
+      const expertiseTags = expertise ? expertise.split(',').map(t => `<span class="modal-tag">${t.trim()}</span>`).join('') : '';
+      
+      const html = `
+        <div class="modal-header">
+          <img src="${photo}" alt="${name}" class="modal-avatar">
+          <div class="modal-header-info">
+            <h2>${name}</h2>
+            <span class="modal-role">${role}</span>
+          </div>
+        </div>
+        
+        <p>${bio || 'Miembro del equipo IA Ñuble, contribuyendo al desarrollo de soluciones innovadoras de inteligencia artificial para la región.'}</p>
+        
+        ${expertiseTags ? `
+        <h3>Áreas de Expertise</h3>
+        <div class="modal-tags">${expertiseTags}</div>
+        ` : ''}
+        
+        <h3>Contribuciones en IA Ñuble</h3>
+        <ul>
+          <li>Desarrollo e implementación de modelos de IA</li>
+          <li>Investigación aplicada en proyectos regionales</li>
+          <li>Colaboración interdisciplinaria con entidades públicas y privadas</li>
+        </ul>
+      `;
       openModal(html);
     });
     card.addEventListener('keypress', (e)=>{ if(e.key === 'Enter') card.click(); });
   });
 
   // Detalles de proyecto desde slides
-  document.querySelectorAll('.slide .slide-more').forEach((btn, idx)=>{
-    btn.addEventListener('click', (e)=>{
-      const slide = btn.closest('.slide');
-      const title = slide.dataset.title || 'Proyecto';
-      const tags = slide.dataset.tags || '';
-      const state = slide.dataset.state || '';
-      // Contenido extendido ejemplo
-      const html = `<h3>${title}</h3><p><strong>Etiquetas:</strong> ${tags}</p><p><strong>Estado:</strong> ${state}</p><p>Descripción extendida: Aquí se incluye más información sobre el proyecto, objetivos, resultados y enlaces relevantes.</p><p><strong>Tecnologías:</strong> IA, XGBoost, IoT, Python</p>`;
+  document.querySelectorAll('.slide-link').forEach((link)=>{
+    link.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const slide = link.closest('.slide');
+      const title = slide.querySelector('h3')?.textContent || 'Proyecto';
+      const tags = Array.from(slide.querySelectorAll('.tags span')).map(t => t.textContent);
+      const badge = slide.querySelector('.slide-badge');
+      const state = badge?.textContent || '';
+      const stateClass = badge?.classList.contains('completed') ? 'completed' : 
+                         badge?.classList.contains('execution') ? 'execution' : 'pending';
+      const excerpt = slide.querySelector('.excerpt')?.textContent || '';
+      const image = slide.querySelector('.slide-image img')?.src || '';
+      
+      // Contenido extendido por proyecto
+      const projectDetails = {
+        'Aula Segura': {
+          description: 'Sistema integral de detección de violencia en tiempo real para establecimientos educacionales, utilizando cámaras de seguridad y algoritmos de visión por computadora.',
+          objectives: [
+            'Detectar situaciones de violencia física en tiempo real',
+            'Alertar automáticamente al personal de seguridad',
+            'Generar reportes estadísticos de incidentes',
+            'Contribuir a la prevención del bullying escolar'
+          ],
+          technologies: ['Python', 'TensorFlow', 'OpenCV', 'YOLO', 'React'],
+          results: 'Piloto exitoso en 3 establecimientos de Ñuble con 95% de precisión en detección.',
+          partners: ['DAEM Chillán', 'Carabineros de Chile', 'UBB']
+        },
+        'Core Drone': {
+          description: 'Proyecto de monitoreo ambiental utilizando drones autónomos equipados con sensores e inteligencia artificial para detectar fuentes de contaminación.',
+          objectives: [
+            'Mapear zonas de contaminación en la región',
+            'Identificar fuentes de emisión de contaminantes',
+            'Monitorear calidad del aire en tiempo real',
+            'Apoyar la toma de decisiones ambientales'
+          ],
+          technologies: ['Python', 'PyTorch', 'ROS', 'Drones DJI', 'Sensores IoT'],
+          results: 'En ejecución - Fase de vuelos de prueba y calibración de sensores.',
+          partners: ['GORE Ñuble', 'SEREMI Medio Ambiente', 'UBB']
+        },
+        'AgroForence IA': {
+          description: 'Sistema de detección temprana de enfermedades en hojas de vid mediante análisis de imágenes con deep learning, apoyando la viticultura de precisión.',
+          objectives: [
+            'Detectar enfermedades fúngicas en etapas tempranas',
+            'Reducir pérdidas en producción vitivinícola',
+            'Optimizar aplicación de tratamientos fitosanitarios',
+            'Capacitar a agricultores en uso de tecnología'
+          ],
+          technologies: ['Python', 'CNN', 'Transfer Learning', 'App Móvil', 'Cloud'],
+          results: 'En postulación a fondos ANID para desarrollo de prototipo.',
+          partners: ['Viñas de Ñuble', 'INIA', 'UBB']
+        },
+        'IA para todos y todas': {
+          description: 'Programa de talleres inclusivos de inteligencia artificial para la comunidad, enfocado en democratizar el conocimiento y uso responsable de estas tecnologías.',
+          objectives: [
+            'Capacitar a 500+ personas de la región',
+            'Reducir la brecha digital en IA',
+            'Formar ciudadanos críticos ante la tecnología',
+            'Fomentar vocaciones científicas en jóvenes'
+          ],
+          technologies: ['ChatGPT', 'Python básico', 'Herramientas No-Code', 'IA Generativa'],
+          results: 'En ejecución - 300+ personas capacitadas en 2024.',
+          partners: ['Sercotec', 'Municipalidades', 'UBB', 'GORE Ñuble']
+        }
+      };
+      
+      const details = projectDetails[title] || {
+        description: excerpt,
+        objectives: ['Desarrollo de soluciones innovadoras con IA', 'Transferencia tecnológica a la comunidad'],
+        technologies: ['Python', 'Machine Learning', 'Data Science'],
+        results: 'Proyecto en desarrollo.',
+        partners: ['UBB', 'IA Ñuble']
+      };
+      
+      const tagsHtml = tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
+      const objectivesHtml = details.objectives.map(o => `<li>${o}</li>`).join('');
+      const techHtml = details.technologies.map(t => `<span class="modal-tag">${t}</span>`).join('');
+      const partnersHtml = details.partners.map(p => `<li>${p}</li>`).join('');
+      
+      const html = `
+        ${image ? `<img src="${image}" alt="${title}" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:20px;">` : ''}
+        
+        <span class="modal-badge ${stateClass}">${state}</span>
+        <h2>${title}</h2>
+        
+        <div class="modal-tags">${tagsHtml}</div>
+        
+        <p>${details.description}</p>
+        
+        <h3>Objetivos</h3>
+        <ul>${objectivesHtml}</ul>
+        
+        <h3>Tecnologías Utilizadas</h3>
+        <div class="modal-tags">${techHtml}</div>
+        
+        <h3>Resultados</h3>
+        <p>${details.results}</p>
+        
+        <h3>Colaboradores</h3>
+        <ul>${partnersHtml}</ul>
+        
+        <div class="modal-links">
+          <a href="#contacto" class="modal-link" onclick="document.getElementById('modal').setAttribute('aria-hidden','true');document.body.style.overflow='';">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+            Colaborar en este proyecto
+          </a>
+        </div>
+      `;
       openModal(html);
     });
   });
@@ -324,6 +504,112 @@ document.addEventListener('DOMContentLoaded', function(){
     if(tag === 'input' || tag === 'textarea') return;
     if(e.key === 'ArrowLeft') prevBtn.click();
     if(e.key === 'ArrowRight') nextBtn.click();
+  });
+
+  // --- CARRUSEL DE NOTICIAS ---
+  const newsTrack = document.querySelector('.news-track');
+  const newsSlides = Array.from(newsTrack.children);
+  const newsNextBtn = document.querySelector('.news-carousel .carousel-btn.next');
+  const newsPrevBtn = document.querySelector('.news-carousel .carousel-btn.prev');
+  const newsDotsContainer = document.querySelector('.news-dots');
+
+  let newsCurrentIndex = 0;
+  let newsVisibleSlides = 3; // Por defecto muestra 3
+
+  // Calcular cuántos slides visibles según el ancho
+  function getNewsVisibleSlides(){
+    if(window.innerWidth <= 600) return 1;
+    if(window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  // Calcular ancho de slide + gap
+  function getNewsSlideWidth(){
+    const slide = newsSlides[0];
+    const style = window.getComputedStyle(newsTrack);
+    const gap = parseInt(style.gap) || 24;
+    return slide.offsetWidth + gap;
+  }
+
+  // Crear dots para noticias
+  function createNewsDots(){
+    newsDotsContainer.innerHTML = '';
+    newsVisibleSlides = getNewsVisibleSlides();
+    const totalPages = Math.ceil(newsSlides.length / newsVisibleSlides);
+    for(let i = 0; i < totalPages; i++){
+      const dot = document.createElement('button');
+      dot.className = 'dot';
+      dot.setAttribute('aria-label', `Ir a página ${i + 1}`);
+      if(i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToNewsSlide(i * newsVisibleSlides));
+      newsDotsContainer.appendChild(dot);
+    }
+  }
+
+  // Actualizar carrusel de noticias
+  function updateNewsCarousel(){
+    const offset = -newsCurrentIndex * getNewsSlideWidth();
+    newsTrack.style.transform = `translateX(${offset}px)`;
+    // Actualizar dots
+    const pageIndex = Math.floor(newsCurrentIndex / newsVisibleSlides);
+    Array.from(newsDotsContainer.children).forEach((d, i) => {
+      d.classList.toggle('active', i === pageIndex);
+    });
+  }
+
+  // Ir a slide específico
+  function goToNewsSlide(i){
+    const maxIndex = newsSlides.length - newsVisibleSlides;
+    newsCurrentIndex = Math.max(0, Math.min(i, maxIndex));
+    updateNewsCarousel();
+  }
+
+  // Botones prev/next para noticias
+  newsNextBtn.addEventListener('click', () => {
+    const maxIndex = newsSlides.length - newsVisibleSlides;
+    if(newsCurrentIndex < maxIndex){
+      goToNewsSlide(newsCurrentIndex + 1);
+    } else {
+      goToNewsSlide(0);
+    }
+  });
+
+  newsPrevBtn.addEventListener('click', () => {
+    if(newsCurrentIndex > 0){
+      goToNewsSlide(newsCurrentIndex - 1);
+    } else {
+      goToNewsSlide(newsSlides.length - newsVisibleSlides);
+    }
+  });
+
+  // Inicializar dots y ajustar al redimensionar
+  createNewsDots();
+  window.addEventListener('resize', () => {
+    createNewsDots();
+    goToNewsSlide(0);
+  });
+
+  // Autoplay para noticias
+  let newsAutoplay = setInterval(() => {
+    const maxIndex = newsSlides.length - getNewsVisibleSlides();
+    if(newsCurrentIndex >= maxIndex){
+      goToNewsSlide(0);
+    } else {
+      goToNewsSlide(newsCurrentIndex + 1);
+    }
+  }, 7000);
+
+  const newsCarouselEl = document.querySelector('.news-carousel');
+  newsCarouselEl.addEventListener('mouseenter', () => clearInterval(newsAutoplay));
+  newsCarouselEl.addEventListener('mouseleave', () => {
+    newsAutoplay = setInterval(() => {
+      const maxIndex = newsSlides.length - getNewsVisibleSlides();
+      if(newsCurrentIndex >= maxIndex){
+        goToNewsSlide(0);
+      } else {
+        goToNewsSlide(newsCurrentIndex + 1);
+      }
+    }, 7000);
   });
 
   // --- FILTROS GALERÍA ---
