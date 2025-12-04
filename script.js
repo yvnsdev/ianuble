@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.querySelector('.navbar');
     
     // Alternar menú hamburguesa
     menuToggle.addEventListener('click', function() {
@@ -52,10 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Cambiar clase activa en navegación al hacer scroll
+    // Cambiar clase activa en navegación al hacer scroll + navbar scrolled
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section');
         const scrollPos = window.scrollY + 100;
+        
+        // Navbar con fondo al hacer scroll
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -72,6 +80,82 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // ===========================================
+    // TIMELINE HORIZONTAL - NAVEGACIÓN
+    // ===========================================
+    
+    const timelineHorizontal = document.querySelector('.timeline-horizontal');
+    const timelinePrev = document.getElementById('timelinePrev');
+    const timelineNext = document.getElementById('timelineNext');
+    
+    if (timelineHorizontal && timelinePrev && timelineNext) {
+        const scrollAmount = 240; // Ancho aproximado de cada item
+        
+        timelinePrev.addEventListener('click', function() {
+            timelineHorizontal.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+        
+        timelineNext.addEventListener('click', function() {
+            timelineHorizontal.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Efecto hover en items del timeline
+        const timelineItems = document.querySelectorAll('.timeline-item-h');
+        timelineItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.querySelector('.marker-pulse').style.animationPlayState = 'paused';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.querySelector('.marker-pulse').style.animationPlayState = 'running';
+            });
+        });
+    }
+    
+    // ===========================================
+    // CONTADOR ANIMADO PARA STATS DEL HERO
+    // ===========================================
+    
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                element.textContent = target + '+';
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(start) + '+';
+            }
+        }, 16);
+    }
+    
+    // Observer para activar contadores cuando son visibles
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.hero-stat-number');
+                statNumbers.forEach(stat => {
+                    const value = parseInt(stat.textContent);
+                    if (!isNaN(value) && !stat.classList.contains('animated')) {
+                        stat.classList.add('animated');
+                        animateCounter(stat, value, 1500);
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+        statsObserver.observe(heroStats);
+    }
     
     // ===========================================
     // MODALES
@@ -132,62 +216,62 @@ document.addEventListener('DOMContentLoaded', function() {
     const teamMembers = [
         {
             id: 1,
-            name: "Dr. Alejandro Torres",
-            role: "Investigador Principal en IA",
-            specialty: "Machine Learning, Visión Computacional",
-            education: "Doctorado en Ciencias de la Computación, Universidad de Chile",
-            projects: "Sistemas de diagnóstico médico por IA, Análisis predictivo de cultivos",
-            contact: "atorres@ianuble.cl",
+            name: "Nicolás Araya",
+            role: "Investigador en IA",
+            specialty: "Machine Learning, Análisis de Datos",
+            education: "Ingeniería en Informática",
+            projects: "Modelos predictivos, Sistemas de análisis inteligente",
+            contact: "naraya@ianuble.cl",
             img: "assets/team/member1.jpg"
         },
         {
             id: 2,
-            name: "Ing. Valeria Soto",
+            name: "Rodrigo Sandoval",
             role: "ML Engineer",
-            specialty: "Procesamiento de Lenguaje Natural",
-            education: "Magíster en Inteligencia Artificial, Universidad de Concepción",
-            projects: "Chatbots para atención ciudadana, Análisis de sentimiento en redes sociales",
-            contact: "vsoto@ianuble.cl",
+            specialty: "Deep Learning, Redes Neuronales",
+            education: "Ingeniería Civil en Computación",
+            projects: "Sistemas de predicción, Automatización inteligente",
+            contact: "rsandoval@ianuble.cl",
             img: "assets/team/member2.jpg"
         },
         {
             id: 3,
-            name: "Ing. Carlos Fernández",
-            role: "DevOps & Data Engineer",
-            specialty: "Infraestructura en la nube, Pipelines de datos",
-            education: "Ingeniería Civil en Computación, Universidad del Bío-Bío",
-            projects: "Plataforma de datos territoriales, Sistemas de monitoreo en tiempo real",
-            contact: "cfernandez@ianuble.cl",
+            name: "Ismael Miranda",
+            role: "Data Scientist",
+            specialty: "Análisis de Datos, Business Intelligence",
+            education: "Ingeniería en Informática",
+            projects: "Dashboards analíticos, Modelos de pronóstico",
+            contact: "imiranda@ianuble.cl",
             img: "assets/team/member3.jpg"
         },
         {
             id: 4,
-            name: "Diseñadora Paula Rojas",
-            role: "UX/UI Designer",
-            specialty: "Diseño centrado en el usuario, Experiencias digitales",
-            education: "Diseño Gráfico, Universidad de Concepción",
-            projects: "Interfaces para plataformas educativas, Diseño de dashboards analíticos",
-            contact: "projas@ianuble.cl",
+            name: "Tomás Yévenes",
+            role: "Desarrollador Full Stack & IA",
+            specialty: "Desarrollo Web, Machine Learning, Computer Vision",
+            education: "Ingeniería Civil en Informática, Universidad del Bío-Bío",
+            projects: "MedPredictPro (predicción médica), Análisis bursátil con IA, Clasificación de imágenes",
+            contact: "tyevenes@ianuble.cl",
             img: "assets/team/member4.jpg"
         },
         {
             id: 5,
-            name: "Lic. Matías Silva",
-            role: "Especialista en Proyectos",
-            specialty: "Gestión de proyectos de IA, Vinculación con el medio",
-            education: "Licenciatura en Administración Pública, Universidad de Chile",
-            projects: "Coordinación de proyectos con municipios, Evaluación de impacto",
-            contact: "msilva@ianuble.cl",
+            name: "Alexandra Pérez",
+            role: "UX/UI Designer & Project Manager",
+            specialty: "Diseño de experiencia de usuario, Gestión de proyectos",
+            education: "Diseño Digital",
+            projects: "Interfaces de plataformas de IA, Coordinación de equipos multidisciplinarios",
+            contact: "aperez@ianuble.cl",
             img: "assets/team/member5.jpg"
         },
         {
             id: 6,
-            name: "Ing. Javiera Méndez",
-            role: "Desarrolladora Full Stack",
-            specialty: "Aplicaciones web, APIs, Integración de sistemas",
-            education: "Ingeniería en Informática, Instituto Profesional Duoc UC",
-            projects: "Plataforma educativa en IA, Sistema de gestión de proyectos",
-            contact: "jmendez@ianuble.cl",
+            name: "Juan Carlos Figueroa",
+            role: "DevOps & Data Engineer",
+            specialty: "Infraestructura cloud, Pipelines de datos, MLOps",
+            education: "Ingeniería en Informática",
+            projects: "Arquitectura de sistemas IA, Despliegue de modelos en producción",
+            contact: "jcfigueroa@ianuble.cl",
             img: "assets/team/member6.jpg"
         }
     ];
@@ -295,6 +379,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Generar slides del carrusel
     if (projectsCarousel) {
+        // crear contenedor de miniaturas (thumbnails)
+        let thumbsContainer = document.getElementById('carouselThumbs');
+        if (!thumbsContainer) {
+            thumbsContainer = document.createElement('div');
+            thumbsContainer.id = 'carouselThumbs';
+            thumbsContainer.className = 'carousel-thumbs';
+            carouselIndicators.parentNode.appendChild(thumbsContainer);
+        }
+
         projects.forEach((project, index) => {
             // Crear slide
             const slide = document.createElement('div');
@@ -307,10 +400,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 return `<span class="tag ${tagClass}">${tag}</span>`;
             }).join('');
             
+            // Clase de estado
+            const statusClass = project.status.toLowerCase()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                .replace(/\s+/g, '-');
+            
             slide.innerHTML = `
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="${project.img}" alt="${project.name}">
+                        <img loading="lazy" src="${project.img}" alt="${project.name}">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">${project.name}</h3>
@@ -318,19 +416,38 @@ document.addEventListener('DOMContentLoaded', function() {
                             ${tagsHTML}
                         </div>
                         <p class="project-desc">${project.description}</p>
-                        <button class="btn btn-primary project-details-btn" data-id="${project.id}">Más detalles</button>
+                        <div class="project-meta">
+                            <div class="project-status ${statusClass}">
+                                <span class="dot"></span>
+                                <span>${project.status}</span>
+                            </div>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-primary project-details-btn" data-id="${project.id}">
+                                <i class="fas fa-info-circle"></i> Ver detalles
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
             
             projectsCarousel.appendChild(slide);
-            
-            // Crear indicador
+
+            // Crear indicador (punto)
             const indicator = document.createElement('div');
             indicator.className = 'carousel-indicator';
             if (index === 0) indicator.classList.add('active');
             indicator.setAttribute('data-index', index);
             carouselIndicators.appendChild(indicator);
+
+            // Crear miniatura
+            const thumb = document.createElement('button');
+            thumb.className = 'carousel-thumb';
+            thumb.setAttribute('aria-label', `Ir al slide ${index + 1}: ${project.name}`);
+            thumb.setAttribute('data-index', index);
+            thumb.style.backgroundImage = `url('${project.img}')`;
+            if (index === 0) thumb.classList.add('active');
+            thumbsContainer.appendChild(thumb);
         });
         
         // Configurar eventos para botones de detalles
@@ -378,6 +495,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function moveCarousel(slideIndex) {
         const slides = document.querySelectorAll('.carousel-slide');
         const indicators = document.querySelectorAll('.carousel-indicator');
+        const thumbs = document.querySelectorAll('.carousel-thumb');
         
         if (slideIndex >= slides.length) {
             currentSlide = 0;
@@ -392,11 +510,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Actualizar indicadores
         indicators.forEach((indicator, index) => {
-            if (index === currentSlide) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Actualizar thumbnails
+        thumbs.forEach((thumb, index) => {
+            thumb.classList.toggle('active', index === currentSlide);
         });
     }
     
@@ -413,13 +532,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Eventos para indicadores del carrusel
-    document.querySelectorAll('.carousel-indicator').forEach(indicator => {
-        indicator.addEventListener('click', function() {
-            const slideIndex = parseInt(this.getAttribute('data-index'));
-            moveCarousel(slideIndex);
+        // Eventos para indicadores del carrusel
+    function bindCarouselIndicatorEvents() {
+        document.querySelectorAll('.carousel-indicator').forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-index'));
+                moveCarousel(slideIndex);
+            });
         });
+
+        // Miniaturas
+        document.querySelectorAll('.carousel-thumb').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-index'));
+                moveCarousel(slideIndex);
+            });
+        });
+    }
+    bindCarouselIndicatorEvents();
+
+    // Teclado: navegar con flechas cuando el foco no esté en un input
+    document.addEventListener('keydown', function(e) {
+        if (['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+        if (e.key === 'ArrowLeft') moveCarousel(currentSlide - 1);
+        if (e.key === 'ArrowRight') moveCarousel(currentSlide + 1);
     });
+
+    // Swipe / drag soport
+    (function addSwipeSupport() {
+        let startX = 0;
+        let dx = 0;
+        let isDown = false;
+
+        projectsCarousel.addEventListener('pointerdown', (e) => {
+            isDown = true;
+            startX = e.clientX;
+            projectsCarousel.style.transition = 'none';
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            dx = e.clientX - startX;
+            projectsCarousel.style.transform = `translateX(${ -currentSlide * 100 + (dx / projectsCarousel.clientWidth) * 100 }%)`;
+        });
+
+        window.addEventListener('pointerup', (e) => {
+            if (!isDown) return;
+            isDown = false;
+            projectsCarousel.style.transition = '';
+            if (Math.abs(dx) > 30) {
+                if (dx > 0) moveCarousel(currentSlide - 1);
+                else moveCarousel(currentSlide + 1);
+            } else {
+                moveCarousel(currentSlide);
+            }
+            dx = 0;
+        });
+    })();
     
     // Auto-avance del carrusel cada 5 segundos
     let carouselInterval = setInterval(() => {
@@ -852,5 +1021,141 @@ document.addEventListener('DOMContentLoaded', function() {
     // INICIALIZACIÓN COMPLETA
     // ===========================================
     
+    // Inicializar animación de red en el header
+    (function initNetworkCanvas() {
+        const canvas = document.getElementById('netCanvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let width = 0;
+        let height = 0;
+        let particles = [];
+        const PARTICLE_COUNT = Math.min(90, Math.floor(window.innerWidth / 12));
+        const MAX_DIST = 120;
+        const MOUSE_INFLUENCE = 150;
+        const mouse = { x: null, y: null, active: false };
+
+        function resize() {
+            width = canvas.width = canvas.clientWidth * devicePixelRatio;
+            height = canvas.height = canvas.clientHeight * devicePixelRatio;
+            ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+        }
+
+        function rand(min, max) { return Math.random() * (max - min) + min; }
+
+        function createParticles() {
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                particles.push({
+                    x: rand(0, canvas.clientWidth),
+                    y: rand(0, canvas.clientHeight),
+                    vx: rand(-0.3, 0.3),
+                    vy: rand(-0.3, 0.3),
+                    r: rand(1, 2.5),
+                    opacity: rand(0.4, 0.95)
+                });
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+
+            // dibujar partículas
+            for (let p of particles) {
+                ctx.beginPath();
+                ctx.fillStyle = `rgba(255,255,255,${p.opacity * 0.95})`;
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // dibujar líneas entre partículas cercanas
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const a = particles[i];
+                    const b = particles[j];
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < MAX_DIST) {
+                        const lineAlpha = 0.9 * (1 - dist / MAX_DIST) * Math.min(a.opacity, b.opacity);
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255,255,255,${lineAlpha * 0.6})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function update() {
+            for (let p of particles) {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // rebotar en bordes
+                if (p.x <= 0 || p.x >= canvas.clientWidth) p.vx *= -1;
+                if (p.y <= 0 || p.y >= canvas.clientHeight) p.vy *= -1;
+
+                // interacción con mouse
+                if (mouse.active && mouse.x !== null) {
+                    const dx = p.x - mouse.x;
+                    const dy = p.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < MOUSE_INFLUENCE) {
+                        const effect = (1 - dist / MOUSE_INFLUENCE) * 0.6;
+                        p.vx += (dx / dist) * effect;
+                        p.vy += (dy / dist) * effect;
+                    }
+                }
+
+                // suavizar velocidades
+                p.vx *= 0.995;
+                p.vy *= 0.995;
+            }
+        }
+
+        let rafId;
+        function loop() {
+            update();
+            draw();
+            rafId = requestAnimationFrame(loop);
+        }
+
+        // eventos
+        window.addEventListener('resize', () => {
+            // pequeño debounce
+            clearTimeout(window._netResizeTimeout);
+            window._netResizeTimeout = setTimeout(() => {
+                resize();
+                createParticles();
+            }, 150);
+        });
+
+        canvas.addEventListener('mousemove', function (e) {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            mouse.active = true;
+        });
+
+        canvas.addEventListener('mouseleave', function () {
+            mouse.x = null;
+            mouse.y = null;
+            mouse.active = false;
+        });
+
+        // Inicializar
+        resize();
+        createParticles();
+        loop();
+
+        // limpiar si se necesita
+        window.addEventListener('beforeunload', () => {
+            cancelAnimationFrame(rafId);
+        });
+    })();
+
     console.log('IA Ñuble - Landing Page cargada correctamente');
 });
