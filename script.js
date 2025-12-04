@@ -3,6 +3,39 @@
 // Esperar al DOM
 document.addEventListener('DOMContentLoaded', function(){
 
+  // --- PAGE LOADER ---
+  const pageLoader = document.getElementById('page-loader');
+  if(pageLoader){
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        pageLoader.classList.add('hidden');
+      }, 500);
+    });
+    // Fallback: ocultar después de 3 segundos si algo falla
+    setTimeout(() => {
+      pageLoader.classList.add('hidden');
+    }, 3000);
+  }
+
+  // --- BACK TO TOP BUTTON ---
+  const backToTop = document.querySelector('.back-to-top');
+  if(backToTop){
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 500){
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }, {passive: true});
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   // --- RED NEURONAL ANIMADA ---
   const canvas = document.getElementById('neural-network');
   if(canvas){

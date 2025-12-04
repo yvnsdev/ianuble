@@ -4,12 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>IA Ñuble - IA para todos y todas</title>
-  <meta name="description" content="IA Ñuble - EBCT dedicada a proyectos de inteligencia artificial para salud, educación y territorio.">
-  <!-- Fuentes sugeridas: Open Sans para textos y Montserrat para títulos -->
+  <meta name="description" content="IA Ñuble - EBCT dedicada a proyectos de inteligencia artificial para salud, educación y territorio en la región de Ñuble, Chile.">
+  <meta name="keywords" content="inteligencia artificial, IA, Ñuble, Chile, machine learning, innovación, tecnología, UBB">
+  <meta name="author" content="IA Ñuble">
+  <meta name="theme-color" content="#1ea7d7">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IA Ñuble - Inteligencia Artificial para todos y todas">
+  <meta property="og:description" content="EBCT dedicada a proyectos de inteligencia artificial para salud, educación y territorio en la región de Ñuble.">
+  <meta property="og:image" content="assets/logos/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logos/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
+  
+  <!-- Fuentes: Open Sans para textos y Montserrat para títulos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Loader inicial -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <span>Cargando...</span>
+    </div>
+  </div>
+
   <header class="site-header">
     <nav class="navbar container">
       <a href="#inicio" class="brand">
@@ -711,6 +735,13 @@
     </div>
     <div class="container copyright">© 2024 IA Ñuble — EBCT de innovación y ciencia aplicada. Todos los derechos reservados.</div>
   </footer>
+
+  <!-- Botón volver arriba -->
+  <button class="back-to-top" aria-label="Volver arriba" title="Volver arriba">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <!-- MODALES -->
   <div id="modal" class="modal" aria-hidden="true">
