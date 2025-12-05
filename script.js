@@ -365,6 +365,7 @@ document.addEventListener('DOMContentLoaded', function(){
         },
         'Core Drone': {
           description: 'Proyecto de monitoreo ambiental utilizando drones autónomos equipados con sensores e inteligencia artificial para detectar fuentes de contaminación.',
+          funding: 'FONDEF - Fondo de Fomento al Desarrollo Científico y Tecnológico',
           objectives: [
             'Mapear zonas de contaminación en la región',
             'Identificar fuentes de emisión de contaminantes',
@@ -373,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function(){
           ],
           technologies: ['Python', 'PyTorch', 'ROS', 'Drones DJI', 'Sensores IoT'],
           results: 'En ejecución - Fase de vuelos de prueba y calibración de sensores.',
-          partners: ['GORE Ñuble', 'SEREMI Medio Ambiente', 'UBB']
+          partners: ['GORE Ñuble', 'SEREMI Medio Ambiente', 'UBB', 'ANID-FONDEF']
         },
         'AgroForence IA': {
           description: 'Sistema de detección temprana de enfermedades en hojas de vid mediante análisis de imágenes con deep learning, apoyando la viticultura de precisión.',
@@ -413,12 +414,22 @@ document.addEventListener('DOMContentLoaded', function(){
       const objectivesHtml = details.objectives.map(o => `<li>${o}</li>`).join('');
       const techHtml = details.technologies.map(t => `<span class="modal-tag">${t}</span>`).join('');
       const partnersHtml = details.partners.map(p => `<li>${p}</li>`).join('');
+      const fundingHtml = details.funding ? `
+        <div class="funding-badge">
+          <img src="anid.png" alt="FONDEF" class="funding-logo">
+          <span><strong>Financiado por:</strong> ${details.funding}</span>
+        </div>
+      ` : '';
       
       const html = `
         ${image ? `<img src="${image}" alt="${title}" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:20px;">` : ''}
         
-        <span class="modal-badge ${stateClass}">${state}</span>
+        <div class="modal-badges">
+          <span class="modal-badge ${stateClass}">${state}</span>
+        </div>
         <h2>${title}</h2>
+        
+        ${fundingHtml}
         
         <div class="modal-tags">${tagsHtml}</div>
         
