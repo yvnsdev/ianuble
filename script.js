@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function(){
   document.getElementById('open-leader-modal').addEventListener('click', ()=>{
     const html = `
       <div class="modal-header">
-        <img src="assets/team/carola-figueroa.jpg" alt="Dra. Carola Figueroa" class="modal-avatar">
+        <img src="carola.jpeg" alt="Dra. Carola Figueroa" class="modal-avatar">
         <div class="modal-header-info">
           <h2>Dra. Carola Figueroa Flores</h2>
           <span class="modal-role">Directora IA Ñuble • Investigadora UBB</span>
