@@ -715,4 +715,114 @@ document.addEventListener('DOMContentLoaded', function(){
     }, 1200);
   });
 
+  // --- GALERÍA MASONRY CON FILTROS Y LIGHTBOX ---
+  const galleryFilters = document.querySelectorAll('.gallery-filter');
+  const masonryItems = document.querySelectorAll('.masonry-item');
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImage = lightbox?.querySelector('.lightbox-image');
+  const lightboxTitle = lightbox?.querySelector('.lightbox-title');
+  const lightboxDesc = lightbox?.querySelector('.lightbox-desc');
+  const lightboxClose = lightbox?.querySelector('.lightbox-close');
+  const lightboxPrev = lightbox?.querySelector('.lightbox-prev');
+  const lightboxNext = lightbox?.querySelector('.lightbox-next');
+  
+  let currentImageIndex = 0;
+  let visibleItems = [];
+
+  // Filtros de galería
+  galleryFilters.forEach(filter => {
+    filter.addEventListener('click', () => {
+      const filterValue = filter.dataset.galleryFilter;
+      
+      // Actualizar botón activo
+      galleryFilters.forEach(f => f.classList.remove('active'));
+      filter.classList.add('active');
+      
+      // Filtrar items
+      masonryItems.forEach(item => {
+        const category = item.dataset.galleryCategory;
+        if(filterValue === 'all' || category === filterValue){
+          item.classList.remove('hidden');
+          item.style.position = 'relative';
+        } else {
+          item.classList.add('hidden');
+          setTimeout(() => {
+            if(item.classList.contains('hidden')){
+              item.style.position = 'absolute';
+            }
+          }, 400);
+        }
+      });
+      
+      updateVisibleItems();
+    });
+  });
+
+  function updateVisibleItems(){
+    visibleItems = Array.from(masonryItems).filter(item => !item.classList.contains('hidden'));
+  }
+  updateVisibleItems();
+
+  // Abrir lightbox al hacer clic en imagen
+  masonryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      if(item.classList.contains('hidden')) return;
+      
+      updateVisibleItems();
+      currentImageIndex = visibleItems.indexOf(item);
+      openLightbox(item);
+    });
+  });
+
+  function openLightbox(item){
+    const img = item.querySelector('img');
+    const title = item.querySelector('.masonry-title');
+    const desc = item.querySelector('.masonry-desc');
+    
+    if(lightboxImage) lightboxImage.src = img.src;
+    if(lightboxImage) lightboxImage.alt = img.alt;
+    if(lightboxTitle) lightboxTitle.textContent = title?.textContent || '';
+    if(lightboxDesc) lightboxDesc.textContent = desc?.textContent || '';
+    
+    lightbox?.classList.add('active');
+    lightbox?.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    lightbox?.classList.remove('active');
+    lightbox?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function showPrevImage(){
+    currentImageIndex = (currentImageIndex - 1 + visibleItems.length) % visibleItems.length;
+    openLightbox(visibleItems[currentImageIndex]);
+  }
+
+  function showNextImage(){
+    currentImageIndex = (currentImageIndex + 1) % visibleItems.length;
+    openLightbox(visibleItems[currentImageIndex]);
+  }
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightboxPrev?.addEventListener('click', showPrevImage);
+  lightboxNext?.addEventListener('click', showNextImage);
+
+  // Cerrar con Escape y navegar con flechas
+  document.addEventListener('keydown', (e) => {
+    if(!lightbox?.classList.contains('active')) return;
+    
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') showPrevImage();
+    if(e.key === 'ArrowRight') showNextImage();
+  });
+
+  // Cerrar al hacer clic fuera de la imagen
+  lightbox?.addEventListener('click', (e) => {
+    if(e.target === lightbox){
+      closeLightbox();
+    }
+  });
+
 });
